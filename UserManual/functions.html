@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>Functions in NicheA</h2>
+				<hr>
+				<h4><li><a name="create_bc"/><a href="function_create_bc.html">Create a background cloud (BC)</a></li></h4>
+				<p>You can use an existing BC configuration to create a BC, or draw a BC with two or three environmental variables directly.</p>
+				<h4><li><a href="function_create_g.html">Create a virtual <b>N</b></a></li></h4>
+				<p>Generate a new <b>N</b> by an ellipsoid, polyhedron from background cloud or another <b>N</b>.</p>
+				<p>There are several ways to create a <b>N</b>. <a href="function_create_g.html">This section</a>
+				 shows how to generate a <b>N</b> via create an ellipse/ellipsoid in 2D or 3D space. 
+				 The following sections shows how to generate a <b>N</b> via other functions.
+				 <ul>
+				 <li><a href="function_create_g2.html">Generate a <b>N</b> from another <b>N</b>.</a></li>
+			   	<li><a href="function_create_g2.html">Generate a <b>N</b> from the overlap of other two <b>N</b>s.</a></li>
+			   	<li><a href="function_create_g3.html">Create barriers to separate a <b>N</b> into two <b>N</b>s.</a></li>
+			   	</ul>
+			   	</p>
+				<h4><li><a href="function_create_g4.html">Generate <b>N</b>(s) from occurrences</a></li></h4>
+				<h4><li><a href="function_create_g.html">Generate <b>N</b>(s) from MVE</a></li></h4>
+				<h4><li><a href="function_g_attributes.html"><b>N</b> attributes</a></li></h4>
+				<h4><li><a href="function_niche_overlap.html">Quantify niche overlap</a></li></h4>
+				<h4><li><a href="function_create_g3.html">Design barriers</a></li></h4>
+				<h4><li><a href="function_pca.html">Principal Component Analysis</a></li></h4>
+				<h4><li><a href="function_conversion_tool.html">Raster conversion</a></li></h4>
+				<h4><li><a href="function_threshold.html">Threshold calculator</a></li></h4>
+				<h4><li><a href="function_export_enm.html">Export N to ENM</a></li></h4>
+				<h4><li><a href="function_occ_stat.html">Occurrence statistics</a></li></h4>
+				<h4><li><a href="function_virtual_occ.html">Virtual species - parameter</a></li></h4>
+				<h4><li><a href="function_variables_statistics.html">Variables statistics</a></li></h4>
+				<h4><li>Read data from multiply raster files</li></h4>
+				<p>Read values from a group of layers with fixed longitude and latitude coordinates.</p>
+				<h4><li><a href="function_standardization.html">Variable normalization/standardization</a></li></h4>
+				<h4><li>Set NoData value</li></h4>
+				<p>Reset the GeoTIFF file’s NO DATA value.</p>
+				<h4><li>Convert points to raster</li></h4>
+				<p>Convert a CSV file with longitude and latitude list to a raster file.</p>
+				<h4><li><a href="function_p_roc.html">Calculate AUC value of partial-area ROC approaches</a></li></h4>
+				<h4><li><a href="function_aic.html">Calculate AIC/BIC value</a></li></h4>
+				<h4><li><a href="function_rescale.html">Change the range of ENM's result</a></li></h4>
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

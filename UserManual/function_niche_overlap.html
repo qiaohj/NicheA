@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>Quantifying niche similarity</h2>
+				<hr>
+				<p>One difference from <a href="http://enmtools.blogspot.com/" target="_blank">
+				ENMTools</a> (Warren, Glor & Turelli 2010) and NichePy (Bentlage & Shcheglovitova 2012) is that NicheA measures niche similarity in E rather than in G, although differeN<sub>C</sub>es between the two will frequently be minor (see detailed discussion and analysis in Peterson et al. 2011). Niche similarity measurements in NicheA are based on overlap of niche ellipsoids or convex polyhedrons directly, an alternative coN<sub>C</sub>eptualization focused on full estimation of fundamental niches rather than on existing or realized niches that will be less representative and general (Peterson et al. 2011).
+				</p>
+
+<p>From the two formulas for E<sub>1</sub> and E<sub>2</sub>, we can produce two minimum cuboids (C<sub>1</sub> and C<sub>2</sub>) corresponding to each ellipsoid, with V<sub>O</sub>lumes V<sub>1</sub> and V<sub>2</sub>. 
+We first judged spatial relationships of these cuboids: when C<sub>1</sub> is disjunct from C<sub>2</sub>, E<sub>1</sub>must be disjunct from E<sub>2</sub>, and the overlap (V<sub>O</sub>) of E<sub>1</sub> and E<sub>2</sub> is 0. However, when the cuboids intersect, we merge C<sub>1</sub> and C<sub>2</sub> to a larger cuboid (C) that contains both E<sub>1</sub> and E<sub>2</sub>, and calculate the V<sub>O</sub>lume of C (V<sub>C</sub>). We then select large numbers of random points within C, and evaluate their positions as falling within E<sub>1</sub> (N1), in E<sub>2</sub> (N<sub>2</sub>), within both (NB), or in neither (N<sub>N</sub>). With infinite numbers of points, we could derive:</p>
+
+	 	<img src="images/figures/functions/niche_overlap/function_niche_overlap_fig1.png">    ⑴
+
+<p>However, as infinite numbers of points are not feasible, we can estimate Vi’ based on more limited samples with acceptable precision as:</p> 
+
+	 	<img src="images/figures/functions/niche_overlap/function_niche_overlap_fig2.png">    ⑵
+
+<p>and calculate a maximum error (Err) between the real value and the estimated one as:</p>
+
+	 	<img src="images/figures/functions/niche_overlap/function_niche_overlap_fig3.png">    ⑶
+
+<p>If Err is less than a desired level of precision (p), we can obtain an estimated niche similarity via (4) based on Jaccard’s index. Fig. 1 shows these steps graphically.</p>
+<img src="images/figures/functions/niche_overlap/function_niche_overlap_fig4.png">	⑷
+
+
+<p><div class="image_legend"><b>Figure 1</b>. The workflow by which niche overlap between two ellipsoids in E space is estimated.</div></p>
+<p><img src="images/figures/functions/niche_overlap/function_niche_overlap_fig5.png" class="figure"/></p>
+
+<p>The entrance of this function is under "Toolbox" menu (Fig.2). In the popup dialog, you need to select two <b>N</b>s to calculate the niche overlap. If you check one "Loop Comparison", NicheA
+ will compare all the <b>N</b>s in the list with the selected <b>N</b> in the other list. In Fig.3, we check both of the "Loop Comparison" to quantify niche similarity of every <b>N</b> pair.</p>
+ <p>In "Calculation Method", you have two options, "MVE" and "CP", which stands for calculate the overlap by "MVE" or "CP" respectively. "Expected precision" is used to measure the accuracy of the results.
+ A smaller precision means a higher accuracy. But it will take a longer time to get the results.</p>
+
+<p>After the calculating process, a popup dialog shows the details of every <b>N</b> and the niche similarities in a table (Fig.4). By clicking "Show in folder" button, NicheA will open the result folder, so that you can reuse the result at any time you want.</p> 
+<p><div class="image_legend"><b>Figure 2</b>. The menu for this function.</div></p>
+<p><img src="images/figures/functions/niche_overlap/function_niche_overlap_fig6.png" class="figure"/></p>
+
+<p><div class="image_legend"><b>Figure 3</b>. </div></p>
+<p><img src="images/figures/functions/niche_overlap/function_niche_overlap_fig7.png" class="figure"/></p>
+
+<p><div class="image_legend"><b>Figure 4</b>. </div></p>
+<p><img src="images/figures/functions/niche_overlap/function_niche_overlap_fig8.png" class="figure"/></p>
+
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

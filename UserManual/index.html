@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>BIODIVERSITY INFORMATIC APPLICATION</h2>
+				<hr>
+				<img src="images/index.png"/>
+				<hr>
+				<h4 align="center">
+					<a href="mailto:huijieqiao@gmail.com">Huijie Qiao</a><sup>1</sup>, 
+					<a href="mailto:lescobar@umn.edu">Luis E. Escobar</a><sup>2</sup>, 
+					<a href="mailto:town@ku.edu">A. Townsend Peterson</a><sup>3</sup>, 
+					<a href="mailto:ji@ioz.ac.cn">Liqiang Ji</a><sup>1</sup>, 
+					<a href="mailto:jsoberon@ku.edu">Jorge Soberón</a><sup>3</sup> &  
+					<a href="mailto:lpcampbell@ku.edu">Lindsay P. Campbell</a><sup>3</sup></h4>
+
+				<center>
+				<p><sup>1</sup><a href="http://english.ioz.cas.cn/rh/rd/200907/t20090713_23062.html" target="_blank">
+					Key Laboratory of Animal Ecology and Conservation Biology, Chinese Academy of Sciences</a>
+				<br/>1 Beichen West Road, Chaoyang District, Beijing 100101, P.R. China
+				</p>
+				
+				<p><sup>2</sup><a href="http://www.maisrc.umn.edu" target="_blank">
+					Minnesota Aquatic Invasive Species Research Center, University of Minnesota, </a>
+				<br/>St. Paul, Minnesota, USA.
+				</p>
+				
+				<p><sup>3</sup><a href="http://naturalhistory.ku.edu/" target="_blank">
+					Biodiversity Institute, University of Kansas</a>
+				<br/>1345 Jayhawk Blvd. Lawrence, KS, 66045-7593 USA
+				</p>
+				
+				
+				</center>
+				
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

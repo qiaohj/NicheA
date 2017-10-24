@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+								<h1 class="entry-title">What is Niche Analyst (NicheA)?</h1>
+						<hr>
+		
+		
+				<p class="desc">Niche Analyst (NicheA;http://biodiversity-informatics-training.org/software-data-sources/ nichea/) is an open-source, cross-platform application released under a GNU Public License (GPL). NicheA is written in Java, combining several toolkits, such as R (R Development Core Team 2011), Weka (Hall 2009), JAMA (Hicklin et al. 2012), GDAL (GDAL Development Team 2011), and QuickHull3D (Lloyd 2012; Fig. 1). The platform is a window-based, user-friendly application that executes on most common operating systems, including Microsoft Windows, Mac OS X, and some Linux releases, such as Ubuntu.</p>
+				<p class="desc">
+				Users can use NicheA (1) to display E spaces of raw environmental data or transformed principal component dimensions, (2) visualize species’ distributions in linked E and G spaces, (3) design barriers to dispersal in G, (4) estimate and display Grinnellian niches in E, (5) map objects between G and E, along with additional functions. Fig. 2 illustrates functions and feasible action flows in NicheA. NicheA can also import and display results of widely-used ENMs, and export <b>N</b>s in formats compatible with various ENM platforms.
+				</p>
+				<p class="image_legend">
+				<b>Figure 1</b>. The software architecture of NicheA. NicheA is a multi-language, GUI-based application that invokes four graphics libraries to implement user interactions. Function modules handle messages sent from the GUI, invoke libraries to complete calculations, and return results to the GUI.
+				</p>
+				<p><img src="images/figures/fig1.png"  class="figure"/></p>
+				
+				<p class="image_legend">
+				<b>Figure 2</b>. Feasible action flows in NicheA. Four function modules in NicheA: (1) The left block is the workflow for creating and displaying a BC with environmental layers supplied by the user. (2) The second block shows generation of <b>N</b>s, displaying them in E, and computing their attributes. (3) The third block shows a simple function used to design barriers for <b>N</b>s in G. (4) The final block contains processes for interacting with other ENM algorithms.
+				</p>
+				<p><img src="images/figures/fig2.png" class="figure"/></p>
+				
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#content", "indexer.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

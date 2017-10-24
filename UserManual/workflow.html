@@ -1,0 +1,153 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>Scientific workflow in NicheA</h2>
+				<hr>
+				<p>A scientific workflow system is a specialized form of a workflow management system designed specifically 
+				to compose and execute a series of computational or data manipulation steps, or workflow, in a scientific 
+				application (From <a href="http://en.wikipedia.org/wiki/Scientific_workflow_system" target="_blank">Wikipedia</a>).</p>
+				
+				<p>There are many motives for differentiating scientific workflows from traditional business process workflows. 
+				These include:</p>
+<p>
+<li>providing an easy-to-use environment for individual application scientists themselves to create their own workflows
+<li>providing interactive tools for the scientists enabling them to execute their workflows and view their results in real-time
+<li>simplifying the process of sharing and reusing workflows between the scientists.
+<li>enabling scientists to track the provenance of the workflow execution results and the workflow creation steps.
+</p>
+<p>Based on the motives/requirements above, we designed a loosely structured scientific workflow system in NicheA. The users can 
+carry through a completed analysis process for a specific purpose by following a workflow. The users can <a href="workflow_download.html" target="_blank">
+download the shared workflows</a>. At the same time, the users can also design their own workflows, and share them with other scientists.</p>
+<p>
+<div class="tip"><p><b>Note:</b></p> <p>
+<b>"A loosely structured scientific workflow system"</b> means that the users can start the workflow from any step and skip any steps, rather than 
+running a workflow from the very beginning, and following the flow strictly.   
+</p>  
+</div>
+</p>
+<h3>1. Using the built-in workflow.</h3>
+<p> In NicheA, we have a simple built-in workflow (Fig. 1). Following the workflow, you can <a href="function_create_bc.html">create a BC</a>,
+<a href="function_create_g.html">create a virtual <b>N</b></a>, <a href="function_create_g3.html">design barriers for the generated <b>N</b></a>,
+<a href="function_export_g.html">export the created <b>N</b>s to the specified format to model in the corresponding software 
+(MaxEnt, openModeller or BIOMOD)</a>, <a href="function_threshold.html">calculate the threshold values to binarize the ENM's result</a>,
+and <a href="function_open_enm.html">open an ENM's result in NicheA</a>.
+</p> 
+
+<p>For every workflow, there is a help message at the beginning of the submenu (Fig. 1)., which is marked as "Help for 'Workflow: WORKFLOW NAME'". 
+After clicking the menu, you can read something about the workflow, including the author information, a brief introduction of the workflow, and 
+a simple explanation for every step. When you invoke the step, the explanation for the step will appear before NicheA run the function.
+<p>
+
+<div class="tip"><p><b>Note:</b></p> <p>
+Actually, a workflow is a group of reassembled functions in NicheA. Every step in a workflow can be found somewhere (File or Toolbox menu) 
+in NicheA with a different name.</p>
+</div>
+</p>
+<p><div class="image_legend"><b>Figure 1</b>. The menu of the built-in workflow.</div></p>
+<p><img src="images/figures/workflow/workflow_fig1.png" class="figure"/></p>
+
+
+<h3>2. Create a new workflow by yourself.</h3>	
+<p>By clicking <img src="images/figures/workflow/workflow_menu.png" width=180px/> menu, you can find all the functions about the workflow (Fig. 2), 
+including:
+</p>
+<p>
+<li> import a downloaded workflow into NicheA.
+<li> edit an existing workflow in NicheA.
+<li> design a new workflow by yourself.
+<li> export a workflow to an independent configuration file to share it with other scientists.
+<li> remove workflow(s) from NicheA.
+</p>
+
+<p><div class="image_legend"><b>Figure 2</b>. The functions about the workflow.</div></p>
+<p><img src="images/figures/workflow/workflow_fig2.png" class="figure"/></p>
+
+		   
+<p> In this section, we will elaborate how to create a new workflow. First, we click the "Design a workflow" button in Fig.2. 
+In the popup dialog, you need to fill in some information of the workflow, select some functions from the list on the left to the right list
+by clicking <img src="images/figures/workflow/arrow_to_right.png" width=50px> (Fig.3). 
+<img src="images/figures/workflow/arrow_to_up.png" width=50px> and <img src="images/figures/workflow/arrow_to_down.png" width=50px> are used to 
+adjust the order of the functions in the right list. <img src="images/figures/workflow/arrow_to_left.png" width=50px> is used to remove the selected
+function from the right list. After clicking the "Save" button, a new workflow will be saved into NicheA. </p>
+<p>
+
+<div class="tip"><p><b>Note:</b></p> <p>
+After clicking "Close" button in Fig.3, the new workflow won't appear in the dialog in Fig.2 immediately. It
+will appear when you close the dialog in Fig.2 and reopen it (Fig.4).</p>
+
+<p>
+The function of editing an existing workflow shares the same dialog (Fig.3) with the function of creating a new workflow. 
+So no more tautology here.</p>
+
+</div>
+</p>
+
+<p><div class="image_legend"><b>Figure 3</b>. The dialog used to create a new workflow or edit an existing workflow.</div></p>
+<p><img src="images/figures/workflow/workflow_fig3.png" class="figure"/></p>
+
+<p><div class="image_legend"><b>Figure 4</b>. The new workflow.</div></p>
+<p><img src="images/figures/workflow/workflow_fig4.png" class="figure"/></p>
+
+<h3>3. Share the workflow with other scientists.</h3>
+<p><b>"Simplifying the process of sharing and reusing workflows between the scientists."</b> is a very important feather for a scientific workflow system.
+In NicheA, you can use "Export the selected workflow" button in Fig.2 to export a workflow to a configure file with 
+<a href="http://en.wikipedia.org/wiki/XML" target="_blank">XML</a> format, and send it to your colleague or share it on <a href="workflow_download.html">this page</a>
+via send it to <a href="mailto:huijieqiao@gmail.com">us</a>.
+
+<p>After you receive a workflow configuration, or <a href="workflow_download.html">download a worflow</a>, you can use "Import a workflow" button to import it to your NicheA.
+</p>
+ 
+<h3>4. Give more detailed information to a workflow.</h3>
+<p>Before you share your carefully crafted workflow, you might hope the users understanding all your ideas clearly.
+It is pity that NicheA provides a very simple user interface to descript a workflow. If you want to add more information to a workflow,
+you can open the configuration file in any text editor (Notepad for instance). What you need to do is editing the content between 
+&ltname&gt ... &lt/name&gt and &ltmessage&gt ... &lt/message&gt tages (Fig. 5). The former is the name of the step, and the latter is the message/information/description of 
+the step. After you edit the configuration file, you need to import and overwrite the existing workflow in your NicheA. Then you can get a 
+fresh workflow with more informations. (Fig. 6)</p>
+
+  <p><div class="image_legend"><b>Figure 5</b>. Using a text editor (<a href="https://macromates.com/" target="_blank">TextMate</a>) to edit
+  the configuration of workflow.</div></p>
+<p><img src="images/figures/workflow/workflow_fig5.png" class="figure"/></p>
+  
+  <p><div class="image_legend"><b>Figure 6</b>. A brand new workflow with more informations.</div></p>
+<p><img src="images/figures/workflow/workflow_fig6.png" class="figure"/></p>
+
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+
+
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

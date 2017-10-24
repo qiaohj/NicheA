@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>The graphical user interface (GUI)</h2>
+				<hr>
+				<p>There are three parts to GUI: the main menu, a group of widgets, and the 3D Scenario (E) (Fig.1). </p> 
+
+<h3>Main Menu:</h3>
+<p>You can find and invoke all of the functions in NicheA from the main menu.</p> 
+<h3>Widget:</h3>
+The group of widgets is used to create a selection (a white ellipsoid with six red points and a green point) in E. 
+The “Offset” sliders can control the center of the ellipsoid in three directions (X, Y, and Z). 
+The “Zoom” sliders can set the length of the semi-axes of the ellipsoid. 
+And the “Rotate” sliders can make the ellipsoid rotate along the specified axis. 
+The “Lock” checkboxes are used to avoid misoperations by locking some of the sliders.
+</p>
+<h3>3D Scenario</h3>
+<p>The virtual scenario in E space, which is used to display the background (<a href="glossary.html">BC</a>), 
+<a href="glossary.html"><b>N</b></a>, and other visible components.</p> 
+
+<p><img src="images/figures/gui.png" class="figure"/></p>
+<p><div class="image_legend"><b>Figure 1</b>. The main frame. Using the widgets on the left to create virtual niches.</div></p>
+
+
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

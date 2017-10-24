@@ -1,0 +1,10 @@
+setwd("@Target")
+library("ggplot2")
+d<-read.table("@DataSet.csv", head=T, sep=",")
+m <- ggplot(d, aes(x=old_value))
+m <- m + geom_histogram()
+ggsave(m, filename="histogram.@DataSet.old.png", width=5, height=5, units="in")
+
+m <- ggplot(d, aes(x=new_value))
+m <- m + geom_histogram()
+ggsave(m, filename="histogram.@DataSet.new.png", width=5, height=5, units="in")

@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>Case studies</h2>
+				<hr>
+				<h3><a href="case1.html">1. Observe ENM results in E space, and display ENM results with different thresholds.</a></h3>
+				<hr>
+				<h3><a href="case2.html">2. Determine the appropriate threshold value by calculating the niche overlap and the distance of two niche centroids.</a></h3>
+				<hr>
+				<h3><a href="case3.html">3. Move a niche definition (an ellipsoid definition) from one scenario to another.</a></h3>
+				<hr>
+				<h3><a href="case4.html">4. Extract similar environmental combinations from two disjoint areas.</a></h3>
+				<hr>
+				<h3><a href="case5.html">5. Analyze niche components intuitively.</a></h3>
+				<hr>
+				<h3><a href="case6.html">6. Using MVE and CP to estimate the ecological niche.</a></h3>
+				<hr>
+				<h3><a href="case7.html">7. Using "Design barriers" tool to split virtual species into multiply parts, and quantifying the niche similarity between different parts.</a></h3>
+				<hr>
+				<h3><a href="case8.html">8. Plotting MVE in R</a> (written by Sergio Estay Email:<a href="mailto:Sergio.estay@gmail.com">Sergio.estay@gmail.com</a>).</h3>
+				<hr>
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

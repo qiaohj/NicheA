@@ -1,0 +1,85 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>Generate <b>N</b>(s) from occurrences</h2>
+				<hr>
+				<p>In this section, we show how to generate a <b>N</b> via a text file with occurrence points.
+				Fist, you need to prepare a text file with the format in Fig.1, and an opened BC in NicheA. 
+				We used the BC generated in <a href="function_create_bc.html">the previous section</a>. The menu of the function is in Fig.2. 
+				In the dialog (Fig.3), we select the prepared file, and a folder to save the result. When NicheA finishes this job, we can open it as a <b>N</b> (Fig.4). 
+				We also show the occurrence points in G space to compare the dataset in E and G space (Fig.5). In Fig.4, we can observe features of occurrence points in E space.
+				In this case, we use the default colors to show the different feathers, which the occurrence points are in red, <a href="glossary.html">
+				the convex polyhedron (CP)</a> is in white, and the <a href="glossary.html">MVE</a> is in yellow. In Fig.4, it is hard to observe the CP and occurrence points, because of 
+				MVE. We can use the submenus under "Control" menu to control the visibility of the features (Fig.6). Fig.7 shows the scenario when we hide MVE. We can see the CP and occurrence
+				points clearly. You can also try the other submenus under "Control" menu.</p>
+				
+				<div class="tip"><p><b>Note:</b></p>
+				<p><li>The occurrence file used in this section can be downloaded via <a href="http://sourceforge.net/projects/nichea/files/Samples/occurrence.csv.zip/download" target="_blank">this link</a>.</p>
+				<p><li>The <b>N</b> generated in this section can be downloaded via <a href="http://sourceforge.net/projects/nichea/files/Samples/occurrences.zip/download" target="_blank">this link</a>.</p>
+				</div>
+				
+				<p><div class="image_legend"><b>Figure 1</b>. 
+			   The format of occurrence points file which can be used in NicheA.</div></p>
+			   <p><img src="images/figures/functions/create_g/function_create_g4_fig1.png" class="figurefull"/></p>
+			   
+			   <p><div class="image_legend"><b>Figure 2</b>. 
+			   The menu of the function.</div></p>
+			   <p><img src="images/figures/functions/create_g/function_create_g4_fig2.png" class="figure"/></p>
+			   
+			   <p><div class="image_legend"><b>Figure 3</b>. 
+			   Select the occurrence points file, and a folder to save the result.</div></p>
+			   <p><img src="images/figures/functions/create_g/function_create_g4_fig3.png" class="figure"/></p>
+			   
+			   <p><div class="image_legend"><b>Figure 4</b>. 
+			   The generated <b>N</b> in E space.</div></p>
+			   <p><img src="images/figures/functions/create_g/function_create_g4_fig4.png" class="figure"/></p>
+			   
+			   <p><div class="image_legend"><b>Figure 5</b>. 
+			   The generated <b>N</b> in G space.</div></p>
+			   <p><img src="images/figures/functions/create_g/function_create_g4_fig5.png" class="figure"/></p>
+			   
+			   <p><div class="image_legend"><b>Figure 6</b>. 
+			   The submenus to control the visibility of the features.</div></p>
+			   <p><img src="images/figures/functions/create_g/function_create_g4_fig6.png" class="figure"/></p>
+			   
+			   <p><div class="image_legend"><b>Figure 7</b>. 
+			   Show CP and occurrence points only in E space.</div></p>
+			   <p><img src="images/figures/functions/create_g/function_create_g4_fig7.png" class="figure"/></p>
+			   
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

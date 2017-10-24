@@ -1,0 +1,88 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>Frequently Asked Questions and Answers</h2>
+				<hr>
+				<h3><a name="faq1">1. Why can’t I run NicheA after double-clicking its icon?</a></h3>
+<p>Tons of reasons could cause that you can’t run NicheA successfully. A suggestion is running NicheA in a terminal, and gathering more details which could help you to solve this issue.</p>
+<p>In Windows OS, assuming you have installed NicheA to “c:\Program Files\Niche Analyst 3.0”, you can go to start menu -> ‘run …’. Input ‘cmd’ (without quotes) after “Open:”, and click “OK” button. Then you will get a terminal form with a dark background. Go into the folder which NicheA were installed with the following command ‘cd c:\Program Files\Niche Analyst 3.0>cd "c:\Program Files\Niche Analyst 3.0"’ (without single quotes, but keeping the double quotes). Then you need to input command “nichea.bat”. You will get some messages about the exception(s) that why you can’t run NicheA successfully.</p>
+
+<p>In Mac OS X, assuming you have installed NicheA to “/Applications/NicheA.app”, you can go to Applications/Utilities, and double click “Terminal.app” to get a terminal form. Then using the following command to the NicheA installation folder ‘cd /Applications/Niche\ Analyst.app/Contents/Resources/Java/’, and running ‘java –jar nichea.jar’ to harvest the messages above.</p>
+
+<p>If you can’t solve the problem by yourself, please shoot an email to <a href="mailto:huijieqiao@gmail.com">huijieqiao@gmail.com</a> without hesitation.</p>
+
+<p>The Fig.1 shows a typical exception which could cause a user was unable to run NicheA successfully. The message showed NicheA failed to find a required library – OpenGL. After checking the drivers in this computer, we found graphics driver was not appropriate. Then a solution is upgrading the driver to support the OpenGL.</p>
+<p><div class="image_legend"><b>Figure 1</b>. How to find the exception, and make NicheA run on your computer.</div></p>
+<p><img src="images/figures/faq/faq_fig1.png" class="figure"/></p>
+ 
+ 
+<h3><a name="faq2">2. Why can I run Maxent, but can’t run NicheA on my computer?</a></h3>
+<p>Since both Maxent and NicheA are written in Java programming language, if I can run Maxent on my laptop, I will be able to run NicheA on the same computer!</p>
+<p>Several reasons could cause this result. Two typical reasons are 1) a low version Java runtime environment (JRE), or 2) command ‘java’ is not in your ‘path’ environment variable of your OS. The simplest solution for both of them is to <a href="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html" target="_blank">download the newest JRE</a>.</p> 
+
+<p>If you still can’t get the lovely NicheA interface, please go back to FAQ 1 to get more information or send an email to <a href="mailto:huijieqiao@gmail.com">huijieqiao@gmail.com</a>.
+ 
+<h3><a name="faq3">3. Why can’t I run some functions in NicheA?</a></h3>
+
+<p>The most probable cause is that NicheA does not have access to enough memory to complete the function. Click ‘About’ - ‘Niche Analyst’, and check the total free memory in NicheA. If the ‘Total memory’ is smaller than 1,000MB, it will cause unintended errors in NicheA. The "Show log..." menu under "About NicheA" also can provide some useful information to help you solving the problems.</p>
+ 
+
+<h3><a name="faq4">4. How to allocate more memory to NicheA in Windows?</a></h3>
+
+<p>Open and edit ‘nichea.bat’ in Program Files/Niche Analyst (version) folder. Change ‘java –jar nichea.jar’ to ‘java -Xms512m -Xmx4024m –jar nichea.jar’.</p>
+
+<h3><a name="faq5">5. How to allocate more memory to NicheA in Mac OS X?</a></h3>
+<p>Open ‘Applications’ folder, right click ‘NicheA.app’, select ‘Show Package Contents’. Go into ‘Contents’ folder, edit ‘Info.plist’, change the following node in Infor.plist file. Then reopen Niche Analyst.app.</p>
+<p>
+&ltkey&gtVMOptions&lt/key&gt
+</p>
+<p>&ltstring&gt-Xms512m -Xmx2048m&lt/string&gt</p>
+<h3><a name="faq6">6. How to allocate more memory to NicheA in Linux?</a></h3>
+<p>Adding the parameters of "-Xms512m -Xmx2048m" when you run NicheA via a terminal.</p>
+  
+<h3><a name="faq7">7. What’s the meaning of “Exception in thread "AWT-EventQueue-0" java.lang.UnsatisfiedLinkError:  gdaljni.dll” when I run NicheA on Windows OS? How to solve it?</a></h3>
+<p>The most possibility is you are running 32bit NicheA on a 64bit Windows OS, vice versa. The easiest way to check it is:</p>
+<p>
+<li>1.	Go to the ‘supports’ folder in which you have installed NicheA (C:\Program Files\Niche Analyst 3.0\supports\gdal\bin\gdal\apps).
+<li>2.	Double click ‘gdal_translate.exe’, and run it.
+<li>3.	If you read an ‘exception’ message like ‘XXX.dll could not be located in dynamic link library’, you just need to copy the file ‘XXX.dll’ from C:\Program Files\Niche Analyst 3.0\supports\gdal\bin to C:\Windows\System32 and overwrite the original one (if exist).
+<li>4.	Or you can send an email to huijieqiao@gmail.com to get more help.
+</p>
+
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

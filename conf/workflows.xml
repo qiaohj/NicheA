@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<workflows>
+  <workflow>
+    <name>Create a N and design a barrier</name>
+    <author>Huijie Qiao and Luis Escobar</author>
+    <email>huijieqiao@gmail.com</email>
+    <message>This workflow is used to create a N using an ellipsoid in E space, and desigh a barrier in G space.</message>
+    <function>
+      <function_name>calculating_pca</function_name>
+      <name>Step 1. Generate principal components</name>
+      <message>PCA, and draw background cloud with the first 3 PCs.</message>
+    </function>
+    <function>
+      <function_name>draw_background_from_saved_package</function_name>
+      <name>Step 2.1. Draw background cloud (BC) from a folder</name>
+      <message>After generating PCs, You can find a 'background' folder in your saved PCA folder. 
+		This folder can be used to draw the background cloud directly.</message>
+    </function>
+    <function>
+      <function_name>draw_background_from_files</function_name>
+      <name>Step 2.2. Draw background cloud (BC) from two or three environmental layers</name>
+      <message>If you didn't generate PCs, you can use any two/three environmental layers to draw the background cloud.</message>
+    </function>
+    <function>
+      <function_name>create_virtual_species</function_name>
+      <name>Step 3. Create a virtual N</name>
+      <message>After drawing an ellipsoid using the widgets on the left side of the form, you can generate a virtual N with this function.</message>
+    </function>
+    <function>
+      <function_name>open_species</function_name>
+      <name>Step 4. Open the virtual N</name>
+      <message>Once you generate a virtual N, you can open it via selecting the folder of the N.</message>
+    </function>
+    <function>
+      <function_name>design_barrier</function_name>
+      <name>Step 5. Design barriers</name>
+      <message>After opening the N, you can design a barrier for it.</message>
+    </function>
+    <function>
+      <function_name>open_species</function_name>
+      <name>Step 6. Open a part of the virtual N based on the barrier</name>
+      <message>After designing a barrier, two folders contain the occurrence points inside and outside of the barrier will be saved in the N folder. 
+		Select and open it in NicheA!</message>
+    </function>
+    <function>
+      <function_name>export_to_enm</function_name>
+      <name>Step 7. Export to ENMs</name>
+      <message>Export the selected N to another ENM software.</message>
+    </function>
+    <function>
+      <function_name>threshold_variables</function_name>
+      <name>Step 8. Threshold variables</name>
+      <message>After modeling N, you need a threshold to binary the model's result.</message>
+    </function>
+    <function>
+      <function_name>open_species</function_name>
+      <name>Step 9. Open the ENM's result</name>
+      <message>After modeling N, you can open the result in NicheA. In this time, you need to select the raster distribution file, rather than the N folder, and set an appropriate threshold value.</message>
+    </function>
+  </workflow>
+</workflows>
+

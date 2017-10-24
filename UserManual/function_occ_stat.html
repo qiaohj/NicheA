@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>Occurrence statistics</h2>
+				<hr>
+				<p>This function is used to count the number of the occurrence points, ENM's result and the background  
+				within a given span of the environmental variables, which are shown as histogram, lines, and log-transferred lines.
+				An R script used to generate the figures above is saved in the result folder. A data file is also provided for further usages.</p>
+				
+				<p><div class="image_legend"><b>Figure 1</b>. The interface for this function.</div></p>
+				<p><img src="images/figures/functions/occ_stat/function_occ_stat_fig1.png" class="figure"/></p>
+				
+				<p><div class="image_legend"><b>Figure 2</b>. The result dialog.</div></p>
+				<p><img src="images/figures/functions/occ_stat/function_occ_stat_fig2.png" class="figure"/></p>
+				
+				<p><div class="image_legend"><b>Figure 3</b>. Relationship between the virtual scenario and the diagram. 
+				In the diagram, the red curve represents the distribution of the background on the x-axis. 
+				The black curve represents the distribution of the points inside of the yellow ellipsoid on the x-axis.</div></p>
+				<p><img src="images/figures/functions/occ_stat/function_occ_stat_fig3.png" class="figure"/></p>
+				
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

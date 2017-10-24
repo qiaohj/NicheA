@@ -1,0 +1,153 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>Plotting MVE in R </h2>
+				<hr>
+				<div class="tip">
+				<p>by <a href="http://www.ciencias.uach.cl/instituto/ciencias_ambientales_evolutivas/academicos/sergio-estay.php" target="_blank">
+				Sergio Estay</a> <br/>Email:<a href="mailto:Sergio.estay@gmail.com">Sergio.estay@gmail.com</a></p>
+				</div>
+<p>
+To create a nice plot of the ellipsoid representing N we can take advantage of R and its libraries.
+We need to install and load the libraries cluster and rgl.
+</p>
+<div class="syntaxhighlighter">
+> install.packages('cluster')<br/>
+> install.packages('rgl')<br/>
+
+<br/>
+> library(cluster)<br/>
+> library(rgl)
+</div>
+
+<p>First, you have to create the background and N's for the species of your interest in NicheA. The procedure is available in the NicheA manual. 
+</p>
+<p>Inside the folder containing the information of your N's you can find a file named “value.txt” containing the coordinates of your presence points in the background. We will use this files to construct and plotting the ellipsoids in R. In this example, I will use two species to visualize niche overlap.
+</p>
+<p>Loading file sp1 and sp2 in R in format “matrix”:
+</p>
+<div class="syntaxhighlighter">
+> M1<-as.matrix(read.table('/path_to_the_folder_1/value.txt', dec='.', sep=',', header=TRUE))<br/>
+> M2<-as.matrix(read.table('/path_to_the_folder_2/value.txt', dec='.', sep=',', header=TRUE))
+</div>
+
+<p>Estimating the MVE for each species using the function “ellipsoidhull” in package cluster
+<div class="syntaxhighlighter">
+> E1<-ellipsoidhull(M1)<br/>
+> E2<-ellipsoidhull(M2)
+</div>
+<p>Objects E1 and E2 belong to class Ellipsoid. These objects contain a list of geometric characteristics of the ellipsoids. For us the important components are the centroid and the covariance matrix.
+</p>
+<p>Plotting E1 and E2 using the rgl package and the information contained in the ellipsoids.
+</p>
+<p>Plotting E1 with functions “plot3d” and “ellipse3d” (Fig.1)
+</p>
+<div class="syntaxhighlighter">
+> plot3d(ellipse3d(E1$cov, centre = E1$loc), col = 'red',type='shade')
+</div>
+
+<p><div class="image_legend"><b>Figure 1</b>.</div></p>
+<p><img src="images/figures/cases/case8/case8_fig1.png" class="figure"/></p>
+ 			   
+<p>Plotting E2 in the same box using the option “add” (Fig.2)
+</p>
+<div class="syntaxhighlighter">
+> plot3d(ellipse3d(E2$cov, centre = E2$loc), col = "darkgreen",type='shade',add=TRUE)
+</div>
+<p><div class="image_legend"><b>Figure 2</b>.</div></p>
+<p><img src="images/figures/cases/case8/case8_fig2.png" class="figure"/></p>
+<p>This is the basic way to plot the ellipsoids in R. Package rgl allow us to manipulate the plot interactively using the mouse, so we can find the best angle to visualize the plot. 
+</p>
+<p>Now, let us to add some nice graphics by taking advantage of the options in the rgl package. You can find information about how to modify axis, text, fonts, etc. in the vignettes associated to the functions “plot3d” and “par3d”. In this example, we will modify font type and font size using par3d 
+</p>
+<div class="syntaxhighlighter">
+> par3d(font=3,cex=1.5)
+</div>
+<p>Now plotting E1 deleting the box, adding transparency (alpha) and defining axes names (Fig.3):
+</p>
+<div class="syntaxhighlighter">
+> plot3d( ellipse3d(E1$cov, centre = E1$loc), col ='red', alpha=0.5, type='shade', box=FALSE, lwd=1.5, xlab='PC1', ylab='PC2',zlab='PC3')
+</div>
+<p><div class="image_legend"><b>Figure 3</b>.</div></p>
+<p><img src="images/figures/cases/case8/case8_fig3.png" class="figure"/></p>
+
+<p>Adding a mesh to the ellipsoid for better visualization (type, Fig.4)
+</p>
+<div class="syntaxhighlighter">
+> plot3d( ellipse3d(E1$cov, centre =E1$loc), col = 'darkgrey', alpha=0.8, type='wire', box=FALSE, lwd=1.5,add=T)
+</div>
+
+<p><div class="image_legend"><b>Figure 4</b>.</div></p>
+<p><img src="images/figures/cases/case8/case8_fig4.png" class="figure"/></p>
+
+<p>Adding E2 
+</p>
+<div class="syntaxhighlighter">
+> plot3d( ellipse3d(E2$cov, centre = E2$loc), col = "darkgreen", alpha=0.5, type='shade', add=TRUE, lwd=1.5)
+</div>
+<p>adding a mesh in E2 (Fig.5)
+</p>
+<div class="syntaxhighlighter">
+> plot3d( ellipse3d(E2$cov, centre = E2$loc), col = "darkgrey", alpha=0.8, type='wire', add=TRUE, lwd=1.5)
+</div>
+<p><div class="image_legend"><b>Figure 5</b>.</div></p>
+<p><img src="images/figures/cases/case8/case8_fig5.png" class="figure"/></p>
+<p>Axis label positions are defined by default according to the rotation angles of the plot, but sometimes they look ugly. If you prefer, you can suppress labels by replacing them with an empty space: xlab= '' ", ylab=''' ", zlab='' ", and defining the position of the label using the function “mtex3d”. For example, 
+</p>
+<div class="syntaxhighlighter">
+> plot3d( ellipse3d(E1$cov, centre = E1$loc), col ='red', alpha=0.5, type='shade', box=FALSE, lwd=1.5, xlab=' ', ylab=' ',zlab=' ')<br/>
+
+> mtext3d('PC3',pos=c(13,0,6),font=3,cex=1.5,edge='y-+')<br/>
+> mtext3d('PC1',pos=c(-3,0,-9),font=3,cex=1.5,edge='y-+')<br/>
+> mtext3d('PC2',pos=c(11,0,-6),font=3,cex=1.5,edge='y-+')
+</div>
+<p>Finally, to export the plot as an image we have two options: pdf and png formats. However, when the plot is exported as a pdf, the package is unable to manage alpha channel (transparency).
+</p>
+<div class="syntaxhighlighter">
+> rgl.postscript('Plot1.pdf',fmt='pdf')
+</div>
+<p>By exporting as a png transparecy is OK.
+</p>
+<div class="syntaxhighlighter">
+> rgl.snapshot('Plot1.png',fmt='png')
+</div>
+
+				
+				
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

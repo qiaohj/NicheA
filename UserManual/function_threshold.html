@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>Threshold calculator</h2>
+				<hr>
+<p>Estimate the threshold based on an ENM’s result and the occurrence points used to generate the result. The following methods can be employed:</p>
+<li>1. Value of the minimum training presence.
+<li>2. x% percentile value of the training presence
+<li>3. Mean value of the training presence
+<li>4. Mean value of the values lower/higher than x% percentile training presence.
+<li>5. x% percentile value of the model
+<li>6. Mean value of the model
+<li>7. Maximum tree skill statistic (TSS) or summary of sensitivity and specificity (This function requires more [4GB is suggested] memory)
+<li>8. Equal sensitivity and specificity (This function also requires more [4GB is suggested] memory)
+<li>9. Fixed value
+
+<p>The thresholded value and environmental layers are saved in the result folder marked by the order of methods (Fig. 1). </p>
+<p>NicheA generates a series of distribution maps for each environmental variable based on the threshold selected. For example, if used selects minimum training presence as threshold and one of the variables is mean annual temperature, NicheA will generate a GeoTIFF fiel of the the suitable areas of temperature, based on the temperature where a minimum training presence is found. </p>
+<p><div class="image_legend"><b>Figure 1</b>. ‘Threshold calculator’ method and its result.</div></p>
+<p><img src="images/figures/functions/threshold/function_threshold_fig1.png" class="figure"/></p>
+
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

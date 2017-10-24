@@ -1,0 +1,292 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>Install NicheA on *nix</h2>
+				<hr>
+				<p>NicheA can run on most of the unix-like OS, such as Ubuntu, CentOS, Debian. 
+				In this section, we introduce how to install NicheA on Ubuntu step by step. You can refer this page to 
+				install NicheA on other unix-like OS. Following this page, you also can install NicheA on Mac OS X. But we suggest you follow
+				<a href="installation_mac.html">another section</a>, only if you want to develop NicheA on Mac OS X.</p>
+				<h3>1. Check the system information:</h3>
+<div class="syntaxhighlighter">
+>uname -a
+<br>
+Linux ubuntu 3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+</div>
+<h3>2. Install Java Runtime Environments (JRE), Java Development Kit (JDK), Ant and check Java version</h3>
+<div class="syntaxhighlighter">
+> java -version
+<br>
+The program 'java' can be found in the following packages:
+<br> 
+ * default-jre
+ <br> 
+ * gcj-4.8-jre-headless
+ <br> 
+ * openjdk-7-jre-headless
+ <br> 
+ * gcj-4.6-jre-headless
+ <br> 
+ * openjdk-6-jre-headless
+ <br> 
+Try: sudo apt-get install <selected package>
+</div>
+<p>If you read this message, you need to install Java Runtime Environments, version is not lower than 1.6.</p>
+
+<h5>Installing default JRE/JDK</h5>
+<p>This is the recommended and easiest option. This will install OpenJDK 6 on Ubuntu 12.04 and earlier and on 12.10+ it will install OpenJDK 7.</p>
+
+<p>Installing Java with apt-get is easy. First, update the package index:</p>
+
+<div class="syntaxhighlighter">
+> sudo apt-get update
+</div>
+<p>Then, check if Java is not already installed:</p>
+<div class="syntaxhighlighter">
+> java –version
+</div>
+<p>If it returns "<b>The program java can be found in the following packages</b>", Java hasn't been installed yet, so execute the following command:</p>
+
+<div class="syntaxhighlighter">
+> sudo apt-get install default-jdk
+<br>
+> sudo apt-get install ant
+</div>
+
+<p>This message means Java has been installed on your Ubuntu successfully.</p>
+<div class="syntaxhighlighter">
+> java -version 
+<br/>
+java version "1.7.0_55"
+<br/> 
+OpenJDK Runtime Environment (IcedTea 2.4.7) (7u55-2.4.7-1ubuntu1)
+<br/> 
+OpenJDK 64-Bit Server VM (build 24.51-b03, mixed mode) 
+</div>
+
+<h3>3. Install Java 3D</h3>
+<h4>3.1 Check Java 3D</h4>
+
+<p>Download test file via this <a href="http://sourceforge.net/projects/nichea/files/Installations/j3d_test/test3d.jar/download" target="_blank">link</a>.</p>
+<p>Try to run test3d.jar in terminal.</p>
+
+<div class="syntaxhighlighter">
+> java -jar test3d.jar
+</div>
+
+<p>When you get the following message, you need to install Java 3D.</p>
+
+<div class="syntaxhighlighter">
+Exception in thread "main" java.lang.NoClassDefFoundError: javax/media/j3d/Canvas3D 
+<br/>
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	<br/> 
+......
+</div>
+<p>
+When you see a form with 3D “Niche Analyst” in Fig.1 , congratulations! You make Java 3D run on your computer.
+</p>
+
+<p><div class="image_legend"><b>Figure 1</b>. Java 3D testing application.</div></p>
+<p><img src="images/figures/installation/installation_nix_fig1.png" class="figure"/></p>
+ 
+<h4>3.2 Install Java 3D</h4>
+
+<p>Download Java 3D via this <a href="http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-java-client-419417.html#java3d-1.5.1-oth-JPR" target="_blank">link</a>.</p> 
+
+<p>Go to the JRE folder, and execute the following command.</p> 
+<div class="tip"><p><b>Note:</b></p><p>For a common installation, JRE is located at /usr/lib/jvm/default-java/jre.</p></div> 
+<div class="syntaxhighlighter">
+> cd /usr/lib/jvm/default-java/jre
+<br/>
+> sudo sh /path-to-download-files/java3d-1_5_1-linux-amd64.bin
+</div>
+
+<p>Then, go back to 3.1 to check the Java 3D.</p>
+
+<h3>4. Install ImageMagick Command line tools.</h3>
+
+<p>If you have installed ImageMagick on your computer, you will get the following message when you run "convert -version".</p>
+<div class="syntaxhighlighter">
+> convert –version
+<br/>
+Version: ImageMagick 6.7.7-10 2014-03-06 Q16 http://www.imagemagick.org
+<br/> 
+Copyright: Copyright (C) 1999-2012 ImageMagick Studio LLC
+<br/> 
+Features: OpenMP   
+</div>
+<p>If you don't get the message above, you need to install ImageMagick with the following command.<p>
+<div class="syntaxhighlighter">
+> sudo apt-get install imagemagick
+</div>
+
+<h3>5. Install GDAL</h3>
+
+<h5># Install subversion</h5>
+<div class="syntaxhighlighter">
+> sudo apt-get -y install subversion
+</div>
+ 
+<h5># Install g++</h5>
+<div class="syntaxhighlighter">
+> sudo apt-get -y install g++
+</div>
+ 
+<h5># Install Hierarchical Data Format library</h5>
+<div class="tip"><p><b>Note:</b></p>
+<p>This library is not necessarily needed, but was required in order for this to compile against a clean Ubuntu 12.04 LTS system.
+ I didn't need it on a clean EC2 Ubuntu 12.10 instance, so
+ I'm commenting it out here. Uncomment if you run into dependency troubles.
+</p>
+</div>
+<div class="syntaxhighlighter">
+# sudo apt-get -y install libhdf4-alt-dev
+</div>
+<h5># Download <a href="http://trac.osgeo.org/gdal/wiki/DownloadSource" target="_blank">gdal 1.11.1</a></h5>
+
+<h5># Unzip gdal to a folder and run the following command.<h5>
+
+<h5># Configure and make</h5>
+<div class="syntaxhighlighter">
+>cd gdal
+<br/>
+>./configure
+<br/>
+>make
+<br/>
+>sudo make install
+<br/>
+</div>
+<h5># Modify .bashrc to export environment variable necessary for gdal to find library files.</h5>
+<div class="syntaxhighlighter">
+>echo " " >> $HOME/.bashrc
+<br/>
+>echo "# GDAL environment variables" >> $HOME/.bashrc
+<br/>
+>echo "export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH" >> $HOME/.bashrc
+<br/>
+>source $HOME/.bashrc
+</div>
+
+<h5># REBOOT your computer to make sure the environment variable can be envoked on NicheA.</h5>
+
+<h5># Check the GDAL version with the following code</h5>
+<div class="syntaxhighlighter">
+> gdalinfo –version
+<br/>
+GDAL 2.0.0dev, released 2014/04/16
+</div>
+
+
+<h5>#Install swig</h5>
+<div class="syntaxhighlighter">
+> sudo apt-get install swig
+</div>
+<h5>#Compile GDAL Java library</h5>
+
+<p>
+go to gdal/swig/java folder, and edit java.opt. Add “/usr/lib/jvm/default-java” to JAVA_HOME.
+If there is no folder “/usr/lib/jvm/default-java/include”, or 
+"jni.h in” is not in  “/usr/lib/jvm/default-java/include”, please reinstall JDK with 
+</p>
+<div class="syntaxhighlighter">
+> sudo apt-get install default-jdk
+</br>
+> cd /path-to-download-file-gdal/swig/java
+</div>
+<p>Edit java.opt, add JAVA_HOME = /usr/lib/jvm/default-java, save and close it.</p>
+<div class="syntaxhighlighter">
+> make
+</div>
+
+<h3>6. Install R runtime environments</h3>
+
+<h5># Download and install R</h5>
+<p>By default, Ubuntu will install R v3.0 when you execute 'sudo apt-get install r-base', which can't install 'ggplot2' package in it. 
+So we suggest to follow <a href="http://cran.r-project.org/bin/linux/ubuntu/" target="_blank">this page</a> to install the newest R on your computer.</p>
+
+<h5># Install R packages</h5>
+<div class="syntaxhighlighter">
+> R
+<br/>
+> install.packages("ggplot2")
+<br/>
+> install.packages("raster")
+<br/>
+> install.packages("rgdal")
+</div>
+
+<h3>7. Run NicheA</h3>
+
+<h5># Download <a href="http://sourceforge.net/projects/nichea/files/Installations/Linux/nichea.jar/download" target="_blank">NicheA 3.0 for Linux </a>.</h5>
+
+<h5># Run NicheA</h5>
+<div class="syntaxhighlighter">
+> java -Djava.library.path=/path-to-download-file-gdal/swig/java –jar nichea.jar
+</div>
+
+<p>The first time to launch NicheA, it will detect all the runtime environments to make sure that all the functions are available. 
+If you see the following dialog form, please tell NicheA the path to the necessary files.
+</p>
+<p><div class="image_legend"><b>Figure 2</b>. Fill in the path to the necessary files.</div></p>
+<p><img src="images/figures/installation/installation_win_fig2.png" class="figure"/></p>
+<p>To find the localities of gdal_translate, gdalwarp, Rscript and convert, you can use ‘which’ command. For example</p>
+<div class="syntaxhighlighter">
+>which gdal_translate
+<br/>
+/usr/local/bin/gdal_translate
+</div>
+
+<h5># Re-run NicheA</h5>
+<div class="syntaxhighlighter">
+>java -Djava.library.path=/path-to-download-files-gdal/swig/java –jar nichea.jar
+</div>
+<h5># When you see the following form, you run NicheA on Ubuntu successfully! Congratulations!</h5>
+<p><div class="image_legend"><b>Figure 3</b>. NicheA GUI.</div></p>
+<p><img src="images/figures/installation/installation_nix_fig3.png" class="figure"/></p>				
+		
+		<h3><a href="test.html">8. Allocate more memory to NicheA</a></h3>
+		<div class="syntaxhighlighter">
+>java <font color=red>-Xms512m -Xmx4024m</font> -Djava.library.path=/path-to-download-file-gdal/swig/java –jar nichea.jar
+</div>
+		
+			<h3><a href="test.html">9. Test NicheA</a></h3>	
+				
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

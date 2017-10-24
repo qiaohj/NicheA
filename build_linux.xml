@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project NicheA with Jar-in-Jar Loader">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="/home/huijieqiao/NicheA/nichea.jar">
+            <manifest>
+                <attribute name="Main-Class" value="org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader"/>
+                <attribute name="Rsrc-Main-Class" value="org.ku.nicheanalyst.ui.display.Displayer"/>
+                <attribute name="Class-Path" value="."/>
+                <attribute name="Rsrc-Class-Path" value="./ junit.jar org.hamcrest.core_1.3.0.v201303031735.jar commons-lang3-3.1.jar jdom-1.0.jar gdal.jar jproj.jar weka.jar mysql-connector-java-5.1.6-bin.jar commons-math3-3.1.1.jar xmpcore.jar jfreechart-1.0.17.jar jfreesvg-1.4.jar commons-io-2.4.jar j3dcore.jar j3dutils.jar vecmath.jar jai_codec.jar jai_core.jar gluegen-rt.jar gluegen.jar joal.jar jocl.jar jogl-all.jar appbundler-1.0.jar gluegen-rt-natives-macosx-universal.jar joal-natives-macosx-universal.jar jocl-natives-macosx-universal.jar jogl-all-natives-macosx-universal.jar lobo-pub.jar lobo.jar jcommon-1.0.21.jar metadata-extractor-2.6.4.jar cobra-gp-0.98.5.jar cobra.jar js.jar"/>
+            </manifest>
+            <zipfileset src="jar-in-jar-loader.zip"/>
+            <fileset dir="/home/huijieqiao/workspace_java/NicheA/bin"/>
+            <zipfileset dir="/home/huijieqiao/Documents/eclipse_java/plugins/org.junit_4.11.0.v201303080030" includes="junit.jar"/>
+            <zipfileset dir="/home/huijieqiao/Documents/eclipse_java/plugins" includes="org.hamcrest.core_1.3.0.v201303031735.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="commons-lang3-3.1.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="jdom-1.0.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="gdal.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="jproj.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="weka.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="mysql-connector-java-5.1.6-bin.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="commons-math3-3.1.1.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="xmpcore.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="jfreechart-1.0.17.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="jfreesvg-1.4.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="commons-io-2.4.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="j3dcore.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="j3dutils.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="vecmath.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="jai_codec.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="jai_core.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="gluegen-rt.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="gluegen.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="joal.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="jocl.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="jogl-all.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="appbundler-1.0.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="gluegen-rt-natives-macosx-universal.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="joal-natives-macosx-universal.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="jocl-natives-macosx-universal.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="jogl-all-natives-macosx-universal.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="lobo-pub.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="lobo.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="jcommon-1.0.21.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="metadata-extractor-2.6.4.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="cobra-gp-0.98.5.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="cobra.jar"/>
+            <zipfileset dir="/home/huijieqiao/workspace_java/NicheA/libs" includes="js.jar"/>
+        </jar>
+    </target>
+</project>

@@ -1,0 +1,103 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>Using MVE and CP to estimate the ecological niche.</h2>
+				<hr>
+				
+				<p>
+				<div class="tip"><p><b>Note:</b></p>
+				<p>The data used in this case study can be downloaded via <a href="http://sourceforge.net/projects/nichea/files/Samples/case6.zip/download" target="_blank">this link</a>.</p>
+				</div>
+				</p>
+				
+				<p>In this section, we introduced a method to estimate the ecological niche via MVE and CP, which can be regarded as two simple ENMs. 
+				The <b>N</b> we used in this section was <b>N</b> No.2 which we generated from <a href="function_create_g2.html">a previous section</a>.</p> 
+				<h3>1. Data preparing</h3>
+				<p>It is hard to see the different between MVE and CP, if we create ENM via MVE and CP with all the occurrences of <b>N</b>. Thus, we use
+				the resampling method to extract a subset of <b>N</b>. The resampling method is combined with two functions, 
+				"<a href="case1.html">Export to ENMs</a> (Fig.1)" and "<a href="function_create_g4.html">Generate <b>N</b>(s) from occurrences</a> (Fig.2)", 
+				which we used in the previous sections.</p>
+				<p><div class="image_legend"><b>Figure 1</b>. The menu for exporting <b>N</b> to Maxent compatible format.</div></p>
+				<p><img src="images/figures/cases/case6/case6_fig1.png" class="figurefull"/></p>
+				<p><div class="image_legend"><b>Figure 2</b>. The menu for generating another <b>N</b> from the resampled occurrences.</div></p>
+				<p><img src="images/figures/cases/case6/case6_fig2.png" class="figurefull"/></p>
+				<p>After clicking the menu in Fig.1, we get a dialog to fill in the required parameters for resampling (Fig.3). In this dialog, we select
+				the <b>N</b> No.2 to resample, set up the other parameters shown in Fig.3. In this case, we pick 100 occurrences from <b>N</b> No.2 randomly. Thus, we 
+				set the "Number" to 100, and check the checkbox on the right side of the textfield.</p>
+				
+				<p><div class="image_legend"><b>Figure 3</b>. Set up the parameters to resample <b>N</b> to a subset with 100 stochastic occurrences.</div></p>
+				<p><img src="images/figures/cases/case6/case6_fig3.png" class="figure"/></p>
+				
+				<p>In the output folder, we can find "1.csv" file which contains the longitude and latitude list in Maxent format (Fig.4). In <a href="case1.html">
+				case study No.1</a>, we used this output to build ENM with Maxent. In this case, we use it to generate another <b>N</b> with <a href="function_create_g4.html">
+				Generate <b>N</b>(s) from occurrences</a> function. (Fig. 5)</p>
+				
+				<p><div class="image_legend"><b>Figure 4</b>. The resampled occurrences in Maxent format.</div></p>
+				<p><img src="images/figures/cases/case6/case6_fig4.png" class="figurefull"/></p>
+				
+				<p><div class="image_legend"><b>Figure 5</b>. Generate a new <b>N</b> with the resampled occurrences above.</div></p>
+				<p><img src="images/figures/cases/case6/case6_fig5.png" class="figure"/></p>
+				
+				<p>Then we open the new <b>N</b> in NicheA. To estimate the ecological niche via MVE and CP, we need to invoke the "Create a virtual <b>N</b>" function (Fig.6)
+				twice. In this case, we select the "By MVE of <b>N</b> below (Fig.7)" and "By CP of <b>N</b> below (Fig.8)" individually, set the first <b>N</b> as 
+				the new <b>N</b> we generated via the resampled occurrences, and set the second <b>N</b> list as "Background cloud (BC)".
+				
+				<p><div class="image_legend"><b>Figure 6</b>. The menu to create a virtual <b>N</b>.</div></p>
+				<p><img src="images/figures/cases/case6/case6_fig6.png" class="figurefull"/></p>
+				
+				<p><div class="image_legend"><b>Figure 7</b>. Estimate the ecological niche of new <b>N</b> via MVE.</div></p>
+				<p><img src="images/figures/cases/case6/case6_fig7.png" class="figure"/></p>
+				
+				<p><div class="image_legend"><b>Figure 8</b>. Estimate the ecological niche of new <b>N</b> via CP.</div></p>
+				<p><img src="images/figures/cases/case6/case6_fig8.png" class="figure"/></p>
+				
+				<p>In each result folder, we can find a "present.tiff" file. It is the estimated distribution via MVE or CP. 
+				When we compare them, we can find that the MVE are closer to the exsiting fundamental niche of <b>N</b> than CP. (Fig.9)</p>
+				
+				<p><div class="image_legend"><b>Figure 9</b>. Linking the environmental with the geographic spaces using NicheA . 
+				<li>A. Virtual ecological niche based in a minimum-volume ellipsoid (yellow). 
+				<li>B. Species distribution model from the MVE (yellow). 
+				<li>C. Virtual ecological niche based on a convex-polyhedron (green). 
+				<li>D. Species distribution model from the convex-polyhedron (green). 
+				<li>E. Combined distribution map. SDM from MVE is in yellow, from CP is in green. The real distribution is in red. The black points are 100 random samples from the real distribution. 
+				(<a href="images/figures/cases/case6/case6_fig9_full.png" target="_blank">Full size</a>)</div></p>
+				<p><img src="images/figures/cases/case6/case6_fig9.png" class="figure"/></p>
+				
+				
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

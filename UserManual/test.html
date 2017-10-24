@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>Test the availability of the functions in NicheA</h2>
+				<hr>
+				<p><li>1. Click <b>About</b> menu, -> <b>Troubleshooting</b>, then select a raster file (GeoTiff or ASC format) in your computer. If there is not an appropriate file on your computer, you can download a sample file via <a href="http://sourceforge.net/projects/nichea/files/sample/potential_y051000.tif/download" target="_blank">HERE</a>.</li></p>
+				<p><li>2. If you see a dialog showed in Fig. 1, it means <b>GDAL</b> functions on your computer works well!</li></p>
+				
+				<p class="image_legend"><b>Figure 1.</b> The dialog shows <b>GDAL</b> functions works well on this computer.</p>
+				<p><img src="images/figures/test/test_fig1.png" class="figurefull"/></p>
+					
+				
+				<p><li>3. If you see two maps, <b>ImageMagick <font color="red">convert</font></b> command works well on your computer!</li></p>
+				
+				<p class="image_legend"><b>Figure 2.</b> The dialog shows <b>ImageMagick <font color="red">convert</font></b> command works well on this computer.</p>
+				<p><img src="images/figures/test/test_fig2.png" class="figurefull"/></p>
+				
+				
+				<p><li>4. If you see two diagrams, <b>R runtime environment</b> and <b>R packages</b> work well on your computer!</li></p>
+				
+				<p class="image_legend"><b>Figure 3.</b> The dialog shows <b>R runtime environment</b> and <b>R packages</b> work well on this computer.</p>
+				<p><img src="images/figures/test/test_fig3.png" class="figurefull"/></p>
+				
+							
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

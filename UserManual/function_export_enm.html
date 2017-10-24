@@ -1,0 +1,103 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>Export N to ENM</h2>
+				<hr>
+				<p>This function is used to sample presences/occurrences within an N, either randomly or with a sampling bias via setting different parameters. </p>
+				
+				<p><div class="image_legend"><b>Figure 1</b>. The menu for this function.</div></p>
+				<p><img src="images/figures/functions/export_enm/function_export_enm_fig1.png" class="figure"/></p>
+				
+				<p><div class="image_legend"><b>Figure 2</b>. <p>The dialog to select an N to export, and set up the parameters.</p>
+				<p>
+				<li>"Select N(s):" Select an N to export.</li>
+				<li>"Output format:" Select the format which the output can be used in different ENMs.</li>
+				<li>"Species label:" A label for the selected N.</li>
+				<li>"Number of repetitions:" The number of repetitions to sampling.</li>
+				<li>"Sample points(%)/Number:" The number of occurrences be resampled. If the checkbox 'Number' is checked, the label changes to 
+				'Number', and the filled number in the textfield means the number of the occurrences be resampled. If the checkbox 'Number'
+				is not checked, it means you want to sample X% from all the occurrences. The label next to the textfield shows the exact number
+				of occurrence to be sampled.</li>
+				<li>"Export method:" "threshold" or "probability". If "threshold", then NicheA selects occurrences randomly
+				 according to the threshold beta. If "probability", then probabilities are converted according to a logistic 
+				 function of threshold beta and slope alpha. An occurrence with a high probability has more opportunities to be picked as 
+				 presence. The text below interpret the export method/beta/alpha in detail.</li>
+				  <li>"Select folder:" Select a folder to save the result.</li>
+				</div></p>
+				
+				<p><img src="images/figures/functions/export_enm/function_export_enm_fig2.png" class="figure"/></p>
+				
+				<p><div class="image_legend"><b>Figure 3</b>. A result when select 'threshold' method, and set beta to 'random' in Fig.2. 
+				NicheA samples inside of the suitable area randomly without any bias.</div></p>
+				<p><img src="images/figures/functions/export_enm/map_random.png" class="figure"/></p>
+				
+				<p><div class="image_legend"><b>Figure 4</b>. A result when select 'threshold' method, and set beta to '0.7' in Fig.2. 
+				NicheA samples inside of the suitable area which suitable no lower than 0.7 randomly.</div></p>
+				<p><img src="images/figures/functions/export_enm/map_threshold_0.7.png" class="figure"/></p>
+				
+				<p><div class="image_legend"><b>Figure 5</b>. A result when select 'probability' method, 
+				and set beta to '0.7' and alpha to '-0.05' in Fig.2. 
+				NicheA convert the probability according to a logistic 
+				 function of threshold beta and slope alpha (Fig.6), and samples based on the converted probability. 
+				 The areas with high probability contain more occurrence, vice versa.
+				 </div></p>
+				<p><img src="images/figures/functions/export_enm/map_probability_b.0.5_a.N0.05.png" class="figure"/></p>
+				
+				<p><div class="image_legend"><b>Figure 6</b>. The curve of the logistic function used in Fig.5 .</div></p>
+				<p><img src="images/figures/functions/export_enm/function_export_enm_fig5.png" class="figure"/></p>
+				
+				
+				<p><div class="image_legend"><b>Figure 7</b>. A result when select 'probability' method, 
+				and set beta to '0.7' and alpha to '0.05' in Fig.2. 
+				NicheA convert the probability according to a logistic 
+				 function of threshold beta and slope alpha (Fig.8), and samples based on the converted probability. 
+				 Because we set up alpha with a positive value, the low probability was convert to a high value. Then we 
+				 got an opposite results of Fig.5. The areas with high probability contain less occurrence. 
+				 When alpha is provided a positive value, we will show a prompt dialog to make sure this setting (Fig.9).
+				 </div></p>
+				<p><img src="images/figures/functions/export_enm/map_probability_b.0.5_a.0.05.png" class="figure"/></p>
+				
+				<p><div class="image_legend"><b>Figure 8</b>. The curve of the logistic function used in Fig.7 .</div></p>
+				<p><img src="images/figures/functions/export_enm/function_export_enm_fig6.png" class="figure"/></p>
+				
+				<p><div class="image_legend"><b>Figure 9</b>. NicheA launch a prompt dialog when user set up a positive value to alpha.</div></p>
+				<p><img src="images/figures/functions/export_enm/function_export_enm_fig7.png" class="figure"/></p>
+				
+				
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

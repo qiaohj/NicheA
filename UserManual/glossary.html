@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>Glossary</h2>
+				<hr>
+				<h3>2D</h3>
+				<p>Two dimensional environmental space</p>
+				<h3>3D</h3>
+				<p>Three dimensional environmental space</p>
+				<h3>BC</h3>
+				<p>The background cloud (BC) is made up by a group of points in a 2D/3D environmental space (E). Each point has two or three values in E and a pair of geographic coordinates (longitude and latitude). In other words, the BC is mapping two or three geographic environmental variables in E. </p>
+				<h3>CP</h3>
+				<p>The convex polyhedron of the occurrence points in 2D or 3D E space, which can be used to estimate a species’ realized niche.</p>
+				<h3>E/E space</h3>
+				<p>Environmental space or niche space</p>
+				<h3>ENM/SDM</h3>
+				<p>Ecological niche modeling/Species distribution modeling</p>
+				<h3>G/G space</h3>
+				<p>Geographic space</p>
+				<h3><b>N</b></h3>
+				<p>Real or virtual species data set (i.e., niche model or occurrences), <b>N</b>(s) refers to several opened <b>N</b> in a scenario</p>
+				<div class="tip"><p><b>Note:</b></p> 
+				<p><b>N</b> was names as <b>G+</b> in the previous version. To avoid the garble with Geographic, we decided to change <b>G+</b> to <b>N</b>.
+				If you find any unreplaced text, figure or menus in both software and user manual, please tell me via <a herf="mailto:huijieqiao@gmail.com">huijieqiao@gmail.com</a>. Thank you very much.</p></div>
+				<p/>
+				<h3>GDAL</h3>
+				<p>Geospatial Data Abstraction Library, which is a library used to handle rasters in NicheA.</p>
+				
+				<h3><a name="mve"></a>MVE</h3>
+				<p>Minimum-volume ellipsoid, approach utilized to estimate a species’ fundamental niche</p>
+				<h3>Selection </h3>
+				<p>A white ellipsoid with six red points and a green point in NicheA’s virtual scenario, which is used to generate a virtual <b>N</b> by using the points inside of it from BC or another <b>N</b>.</p>
+				
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>Conversion tool for raster file</h2>
+				<hr>
+				The conversion tool utility (Fig. 1) is an additional application that can convert supported raster environmental variables to other formats 
+				for use in NicheA directly. Formats supported in NicheA come from GDAL, which are listed at 
+				<a href="http://www.gdal.org/formats_list.html" target="_blank">http://www.gdal.org/formats_list.html</a>.
+				
+				<p><div class="image_legend"><b>Figure 1</b>. Converting GeoTiff format to ASC format.</div></p>
+				<p><img src="images/figures/functions/conversion_tool/function_conversion_tool_fig1.png" class="figure"/></p>
+				
+				Sometimes GDAL can't convert some formats. When you watch the dialog in Fig.2, it means NicheA fails to convert all the files to the desired 
+				format. You can open the log dialog (Fig.3) to read the details (Fig.4) about this failure, or copy the command in the log form to re-run in a terminal.
+				 
+				<p><div class="image_legend"><b>Figure 2</b>. NicheA fails to convert all the files to the desired format.</div></p>
+				<p><img src="images/figures/functions/conversion_tool/function_conversion_tool_fig2.png" class="figure"/></p>
+				
+				<p><div class="image_legend"><b>Figure 3</b>. The menu to view the log.</div></p>
+				<p><img src="images/figures/functions/conversion_tool/function_conversion_tool_fig3.png" class="figurefull"/></p>
+								
+				<p><div class="image_legend"><b>Figure 4</b>. The log to interpret the failing reason.</div></p>
+				<p><img src="images/figures/functions/conversion_tool/function_conversion_tool_fig4.png" class="figurefull"/></p>
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

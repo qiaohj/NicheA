@@ -1,0 +1,92 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>Using "Design barriers" tool to split virtual species into multiply parts, 
+				and quantifying the niche similarity between different parts </h2>
+				<hr>
+				
+				<p>
+				<div class="tip"><p><b>Note:</b></p>
+				<p>The data used in this case study can be downloaded via <a href="http://sourceforge.net/projects/nichea/files/Samples/case6.zip/download" target="_blank">this link</a>.</p>
+				</div>
+				</p>
+				
+				<p>In section "<a href="function_create_g3.html">Create barriers to separate a <b>N</b> into two <b>N</b>s</a>", we knew how to
+				split a <b>N</b> into two parts in G space with "Design barriers" tool. In that section, we separated <b>N</b> No.2 into two parts in G space.
+				But there was no significant differences in E space. In this section, we will split <b>N</b> No.2 into more parts, observe their features in E space, 
+				and quantify their niche similarity in NicheA.</p>
+				
+				<p>First, we use the "Design barriers" tool (Fig.1 and 2) to separate <b>N</b> No.2 into four parts (Australia, Africa, North America and South America; Fig. 3 to 6). 
+				Then we open all these four separated <b>N</b>s one by one. Fig. 7 shows the <b>N</b>s in both E space and G space.</p>
+				<p>Then We use "Quantify Niche overlap" function (Fig. 8 and 9) to calculate the niche overlaps between every area-pair (Table.1). </p>
+				<p><div class="image_legend"><b>Figure 1</b>. The menu of "Design barriers".</div></p>
+				<p><img src="images/figures/cases/case7/case7_fig1.png" class="figurefull"/></p>
+				
+				<p><div class="image_legend"><b>Figure 2</b>. Select the <b>N</b> which is used to generate the barriers.</div></p>
+				<p><img src="images/figures/cases/case7/case7_fig2.png" class="figure"/></p>
+				
+				<p><div class="image_legend"><b>Figure 3</b>. Select Australia in G space.</div></p>
+				<p><img src="images/figures/cases/case7/case7_fig3.png" class="figure"/></p>
+				
+				<p><div class="image_legend"><b>Figure 4</b>. Select Africa in G space.</div></p>
+				<p><img src="images/figures/cases/case7/case7_fig4.png" class="figure"/></p>
+				
+				<p><div class="image_legend"><b>Figure 5</b>. Select North America in G space.</div></p>
+				<p><img src="images/figures/cases/case7/case7_fig5.png" class="figure"/></p>
+				
+				<p><div class="image_legend"><b>Figure 7</b>. The separated <b>N</b> in E and G space (<a href="images/figures/cases/case7/case7_fig7_full.png" target="_blank">Full size</a>).
+				Australia is in blue, Africa is in yellow, North America is in red, and South America is in green.</div></p>
+				<p><img src="images/figures/cases/case7/case7_fig7.png" class="figure"/></p>
+				
+				<p><div class="image_legend"><b>Figure 8</b>. The menu to calculate the niche overlap.</div></p>
+				<p><img src="images/figures/cases/case7/case7_fig8.png" class="figurefull"/></p>
+				
+				<p><div class="image_legend"><b>Figure 9</b>. The dialog to calculate the niche overlap.</div></p>
+				<p><img src="images/figures/cases/case7/case7_fig9.png" class="figure"/></p>
+				
+<p><div class="image_legend"><b>Table 1</b>. The niche overlaps between different areas.</div></p>				
+<table><tr><th> </th><th>Origin</th><th>	Australia</th><th>	Africa</th><th>	S America</th><th>	N America</th></tr>
+<tr><td><b>Origin</b></td><td align="right">	25.34</td><td align="right">	4.31</td><td align="right">	13.11</td><td align="right">	23.31</td><td align="right">	24.66</td></tr>
+<tr><td><b>Australia</b></td><td align="right"></td><td align="right">		5.21</td><td align="right">	4.40</td><td align="right">	4.54</td><td align="right">	4.31</td></tr>
+<tr><td><b>Africa</b></td><td align="right"></td><td align="right"></td><td align="right">			15.43</td><td align="right">	13.46</td><td align="right">	13.12</td></tr>
+<tr><td><b>S America</b></td><td align="right"></td><td align="right"></td><td align="right"></td><td align="right">				24.38</td><td align="right">	23.16</td></tr>
+<tr><td><b>N America</b></td><td align="right"></td><td align="right"></td><td align="right"></td><td align="right"></td><td align="right">					24.71</td></tr>
+</table>
+				
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

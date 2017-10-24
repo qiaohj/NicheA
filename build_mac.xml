@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project NicheA">
+	
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+    	<taskdef name="bundleapp" classname="com.oracle.appbundler.AppBundlerTask" classpath="libs/appbundler-1.0.jar"/>
+		<bundleapp outputdirectory="/Users/huijieqiao/Programs/Java/NicheA_support/mac/release/App"
+	        name="NicheA"
+	        displayname="Niche Analyst"
+	        identifier="org.ku.nicheanalyst"
+	        shortversion="3.0"
+			icon="bundle/nichea.icns"
+			copyright="2012 - 2015 IOZ, CAS and KU"
+	        applicationCategory="public.app-category.developer-tools"
+	        mainclassname="org/ku/nicheanalyst/ui/display/Displayer">
+	        <runtime dir="/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home"/>
+			<classpath file="/Users/huijieqiao/Programs/Java/NicheA_support/mac/release/nichea.jar"/>
+			<classpath file="/Applications/Eclipse Juna/plugins/org.junit_4.11.0.v201303080030/junit.jar"/>
+            <classpath file="/Users/huijieqiao/Programs/Java/NicheA/libs/commons-lang3-3.1.jar"/>
+            <classpath file="/Users/huijieqiao/Programs/Java/NicheA/libs/jdom-1.0.jar"/>
+            <classpath file="/Users/huijieqiao/Programs/Java/NicheA/libs/gdal.jar"/>
+            <classpath file="/Users/huijieqiao/Programs/Java/NicheA/libs/jproj.jar"/>
+            <classpath file="/Users/huijieqiao/Programs/Java/NicheA/libs/weka.jar"/>
+            <classpath file="/Users/huijieqiao/Programs/Java/NicheA/libs/mysql-connector-java-5.1.6-bin.jar"/>
+            <classpath file="/Users/huijieqiao/Programs/Java/NicheA/libs/jai_codec.jar"/>
+            <classpath file="/Users/huijieqiao/Programs/Java/NicheA/libs/jai_core.jar"/>
+            <classpath file="/Users/huijieqiao/Programs/Java/NicheA/libs/j3dcore.jar"/>
+            <classpath file="/Users/huijieqiao/Programs/Java/NicheA/libs/j3dutils.jar"/>
+            <classpath file="/Users/huijieqiao/Programs/Java/NicheA/libs/vecmath.jar"/>
+            <classpath file="/Users/huijieqiao/Programs/Java/NicheA/libs/commons-io-2.4.jar"/>
+            <classpath file="/Users/huijieqiao/Programs/Java/NicheA/libs/commons-math3-3.1.1.jar"/>
+            <classpath file="/Users/huijieqiao/Programs/Java/NicheA/libs/metadata-extractor-2.6.4.jar"/>
+            <classpath file="/Users/huijieqiao/Programs/Java/NicheA/libs/xmpcore.jar"/>
+            <classpath file="/Users/huijieqiao/Programs/Java/NicheA/libs/jcommon-1.0.21.jar"/>
+            <classpath file="/Users/huijieqiao/Programs/Java/NicheA/libs/jfreechart-1.0.17.jar"/>
+            <classpath file="/Users/huijieqiao/Programs/Java/NicheA/libs/jfreesvg-1.4.jar"/>
+        	<classpath file="/Users/huijieqiao/Programs/Java/NicheA/libs/cobra.jar"/>
+        	<classpath file="/Users/huijieqiao/Programs/Java/NicheA/libs/cobra-gp-0.98.5.jar"/>
+        	<classpath file="/Users/huijieqiao/Programs/Java/NicheA/libs/js.jar"/>
+        	<classpath file="/Users/huijieqiao/Programs/Java/NicheA/libs/gluegen-rt.jar"/>
+        	<classpath file="/Users/huijieqiao/Programs/Java/NicheA/libs/gluegen.jar"/>
+        	<classpath file="/Users/huijieqiao/Programs/Java/NicheA/libs/joal.jar"/>
+    		<classpath file="/Users/huijieqiao/Programs/Java/NicheA/libs/jocl.jar"/>
+    		<classpath file="/Users/huijieqiao/Programs/Java/NicheA/libs/jogl-all.jar"/>
+			<classpath file="/Users/huijieqiao/Programs/Java/NicheA_support/mac/gdal-1.11.1/swig/java/libgdaljni.dylib"/>
+			<classpath file="/Users/huijieqiao/Programs/Java/NicheA_support/mac/gdal-1.11.1/swig/java/libgdalconstjni.dylib"/>
+			<classpath file="/Users/huijieqiao/Programs/Java/NicheA_support/mac/gdal-1.11.1/swig/java/libogrjni.dylib"/>
+			<classpath file="/Users/huijieqiao/Programs/Java/NicheA_support/mac/gdal-1.11.1/swig/java/libosrjni.dylib"/>
+			<classpath file="/Users/huijieqiao/Programs/Java/NicheA/libs/js.jar"/>
+			<classpath file="/Users/huijieqiao/Programs/Java/NicheA/libs/lobo-pub.jar"/>
+			<classpath file="/Users/huijieqiao/Programs/Java/NicheA/libs/lobo.jar"/>
+	        <option value="-Dapple.laf.useScreenMenuBar=true"/>
+			<option value="-Djava.library.path=."/>
+			<option value="-Xms512m"/>
+			<option value="-Xmx2048m"/>
+	    </bundleapp>
+        <jar destfile="/Users/huijieqiao/Programs/Java/NicheA_support/mac/release/App/NicheA.app/Contents/Java/nichea.jar" 
+        	filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="org.ku.nicheanalyst.ui.display.Displayer"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="/Users/huijieqiao/Programs/Java/NicheA/bin"/>
+        	<zipfileset excludes="META-INF/*.SF" src="/Applications/Eclipse Juna/plugins/org.junit_4.11.0.v201303080030/junit.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Applications/Eclipse Juna/plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/commons-lang3-3.1.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/jdom-1.0.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/gdal.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/jproj.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/weka.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/mysql-connector-java-5.1.6-bin.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/commons-math3-3.1.1.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/xmpcore.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/jfreechart-1.0.17.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/jfreesvg-1.4.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/commons-io-2.4.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/j3dcore.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/j3dutils.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/vecmath.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/jai_codec.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/jai_core.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/gluegen-rt.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/gluegen.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/joal.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/jocl.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/jogl-all.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/appbundler-1.0.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/gluegen-rt-natives-macosx-universal.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/joal-natives-macosx-universal.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/jocl-natives-macosx-universal.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/jogl-all-natives-macosx-universal.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/lobo-pub.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/lobo.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/jcommon-1.0.21.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/metadata-extractor-2.6.4.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/cobra-gp-0.98.5.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/cobra.jar"/>
+	        <zipfileset excludes="META-INF/*.SF" src="/Users/huijieqiao/Programs/Java/NicheA/libs/js.jar"/>
+        </jar>
+           
+    	
+    </target>
+</project>

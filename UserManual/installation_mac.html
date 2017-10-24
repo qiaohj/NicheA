@@ -1,0 +1,152 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>Install NicheA on Mac OS X 10.7+</h2>
+				<hr>
+				<div class="tip"><p><b>Note:</b></p>
+				<p>
+				
+				In the latest Mac OS X (l Capitan and Sierra), they combined an old Java 3D library (v1.3) by default. 
+				NicheA requires Java 3D library v1.6. You needn't install Java 3D library v1.6 because the NicheA installation package contains the required library. 
+				But you have to remove the default Java 3D library (v1.3) installed in System/Library/Java/Extensions/
+</p>
+
+<p>Because of the new feature introduced in El Capitan, System Intregrity Protection (SIP), you can't remove the files in System/Library/Java/Extensions/ directly (even with "sudo"). 
+You need to turn off SIP, so that you can remove the j3d_xxxx.jar in  /System/Library/Java/Extensions/ 
+</p>
+<p>
+You can temporarily disable SIP and remove the Java 3D library (v1.3) with the following way
+<ul>
+<li>reboot
+<li>as soon as you hear the "Mac sound" on the grey screen, press Cmd+R to enter Recovery mode
+<li>Open Utilities->Terminal
+<li>Run the command csrutil disable
+<li>Reboot, you'll land in the normal OS with SIP disabled
+<li>Remove j3d*.jar, vecmath.jar in folder "/System/Library/Java/Extensions/"
+<li>Reboot again
+<li>as soon as you hear the "Mac sound" on the grey screen, press Cmd+R to enter Recovery mode
+<li>Enable SIP with csrutil enable
+<li>Reboot again
+<li>done
+</ul>
+
+
+</p>
+</div>
+	<h3>1. Install GDAL Component (<a href="http://sourceforge.net/projects/nichea/files/Installations/Mac/Supported/GDAL_Complete-1.11.dmg/download" target="_blank">Download</a>)</h3>
+				<p>This is a convenience installer that includes all the current versions of the GDAL, GEOS, PROJ, SQLite and UnixImageIO frameworks below. 
+				There is no need to download and install these frameworks individually if this package is installed. The GDAL plugins and other extras 
+				are not included, but the numPy package is.</p>
+				<h3>2. Install PCRE v8.36 - Perl Compatible Regular Expressions</h3>
+				<p> GDAL need PCRE to be installed to /usr/local/lib folder. If you have installed XCODE and gcc, you can compile and install PCRE from 
+				<a href="www.pcre.org" target="_blank">source code</a>. We compiled it on Mac OS X 10.9. It works well on Mac OS X 10.8 and 10.9. After downloading 
+				the <a href="http://sourceforge.net/projects/nichea/files/Installations/Mac/Supported/pcre-8.36-macosx.zip/download" target="_blank">
+				compiled PCRE</a>, you can execute the following commands to copy PCRE to a right place.</p>
+				<p>The commands to install PCRE. Assuming you have downloaded and upzipped PCRE.</p>
+				<div class="syntaxhighlighter">
+				<p><li>If you have no /usr/local/lib folder on your computer, you need to execute the following commands to make the folders.</p>
+				>sudo mkdir /usr/local 
+				<br>
+				>sudo mkdir /usr/local/lib
+				<p/>
+				<p><li>Use the following command to copy the PCRE to the right folder</p>
+				>sudo cp /path_to_pcre/* /usr/local/lib
+				</div>
+				<h3>3. Install R </h3>
+				<p>You can following <a href="http://cran.rstudio.com/" target="_blank">this page</a> to install R to your computer. Then you need to 
+				install the following packages with the following commands.</p>
+				<div class="syntaxhighlighter">
+				> R
+				<br/>
+				> install.packages("ggplot2")
+				<br/>
+				> install.packages("raster")
+				<br/>
+				> install.packages("rgdal")
+				</div>
+							
+				<h3>4. Install ImageMagick. (<a href="http://cactuslab.com/imagemagick/assets/ImageMagick-6.9.1-0.pkg.zip" target="_blank">Download</a>)</h3>
+				<h3>5. Download and run NicheA. (<a href="http://sourceforge.net/projects/nichea/files/Installations/Mac/NicheA.app.3.0.zip/download" target="_blank">Download</a>) </h3>
+				<p>Generally, you can run NicheA via double clicking <img src="images/nichea_icon.png" width=25px/> after unzipping it. You can also copy
+				it to your /Applications folder.</p>
+				<p>If you can't see NicheA's GUI, you can run NicheA via a command to get more informations, or contact <a href="mailto:huijieqiao@mgial.com">
+				huijieqiao@gmail.com</a> to get help.</p>
+				<div class="syntaxhighlighter">
+				> folder_of_nichea.app/NicheA.app/Contents/MacOS/JavaAppLauncher
+				<br/><b>Output:</b>
+				<br/>Current version v3.0 5.2.2015
+<br/>Operating system is Mac OS X
+<br/>Operating system local is en_US
+<br/>Set Operating system local to en
+<br/>Java version is 1.8.0_25
+<br/>Java class path is .
+<br/>Java library path is .
+<br/>Java ext path is .
+<br/>GDAL Native Library loaded.
+<br/>GDAL version: 1.11.2
+<br/>jar:file:/Users/huijieqiao/Documents/NicheA.app/Contents/Java/j3dcore.jar!/javax/media/j3d/VirtualUniverse.class
+<br/><font color="red">3D [dev] 1.6.0-pre11-daily-experimental daily
+
+ <br/>Java3D version : 1.6.0-pre11-daily-experimental daily</font>
+ <br/>Java3D vendor : 
+ <br/>Java3D renderer: OpenGL
+<br/>Find gdal_translate at /Library/Frameworks/GDAL.framework/Programs/gdal_translate
+<br/>Find gdalwarp at /Library/Frameworks/GDAL.framework/Programs/gdalwarp
+<br/>Find ImageMagick at /opt/ImageMagick/bin/convert
+<br/>Find RScript at /usr/bin/rscript
+				</div>
+				<h3>6. Check Java 3D</h3>
+				<p>NicheA uses Java 3D 1.6.0, but some Mac OS X release version contains an old version Java 3D (1.3 or 1.5), which may cause NicheA to crash. 
+				The dialog in Fig.1 means that NicheA loads an incorrect J3D library. 
+				A solution is removing the old version Java 3D with the following commands.</p>
+				<div class="syntaxhighlighter">
+				> cd /System/Library/Java/Extensions
+				<br/>
+				> sudo mkdir java3d_bak
+				<br/>
+				> sudo mv j3d* java3d_bak/
+				<br/>
+				> sudo mv libJ3D* java3d_bak/
+				</div>
+				
+				<p><div class="image_legend"><b>Figure 1</b>. A dialog form to tell user that NicheA loads an incorrect J3D library.</div></p>
+ 			   <p><img src="images/figures/installation/installation_mac_fig1.png" class="figure"/></p>
+ 			   
+				<h3><a href="test.html">7. Test NicheA</a></h3>
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>What's new</h2>
+				<hr>
+				<h3>Release: 3.0.11 [14 Sep, 2015]</h3>
+				<ul>
+				<li>Based on comments from two excellent reviewers of Ecography, we did the following modifications in this version.</li>
+				<ul>
+				<li>Re-organized the menus to make them clearer via grouping all functions into 6 groups under "Toolbox" menu. 
+				Added a new menu 'All functions' before 'About NicheA' which is the same as the original Toolbox menu.</li>
+				<li>Rewrote the '<a href="function_export_enm.html">Export to ENM</a>' function.</li>
+				<li>Expanded N from 2/3D only to 2-N dimensions. The related function supported high dimensions now. But NicheA can only 
+				show N in 2/3D in the E space.</li>
+				</ul>
+				</ul>
+				
+				<h3>Release: 3.0.10 [21 July, 2015]</h3>
+				<ul>
+				<li>Removed "Show/Hide Points/MVE/CP" menus under "Control" menu. Added "Set the visibility of N's components" under "N(s) list". 
+				Now, users can control the visibilities of points, MVE and CP for each N individually.</li>
+				</ul>
+				
+				<h3>Release: 3.0.9 [7 July, 2015]</h3>
+				<ul>
+				<li>Improved "<a href="function_pca.html">Principal Component Analysis</a>" function.</li>
+				<ul>
+				<li>Replaced the internal Java code with a R script to execute PCA to make a better capability. Thank Marcelo Fuentes Hurtado to point out this issue.</li>
+				<li>Provided the ability to transfer the result of PCA from one group of environmental layers to another. Thank Abdallah Samy to give us this requirement.</li>
+				</ul>
+				   
+				<li>Added a submenu "Change scenario's background" under "Control" menu to switch the background of scenario between black and white.</li>
+				<li>Added a submenu "Check for update" under "About NicheA" menu to compare the working version with the latest online version.</li>
+				</ul>
+				
+				
+				<h3>Release: 3.0.8 [24 June, 2015]</h3>
+				<ul>
+				<li>User can control the MVE/CP/Points for every <b>N</b> via "<b>N</b>(s) list" menu.</li>
+				<li>Added "<a href="function_p_roc.html">Calculate AUC value of partial-area ROC approaches</a>" function.</li>
+				<li>Added "<a href="function_aic.html">Calculate AIC/BIC value</a>" function.</li>
+				<li>Added "<a href="function_rescale.html">Change the range of ENM's result</a>" function.</li>
+				</ul>
+				
+				<h3>Release: 3.0.7 [15 May, 2015]</h3>
+				<ul>
+				<li>Added "<a href="http://cran.r-project.org/web/packages/biomod2/index.html" target="_blank">BIOMOD2</a>", 
+				"<a href="http://cran.r-project.org/web/packages/dismo/index.html" target="_blank">dismo</a>" and "Multivariate kernel density estimation 
+				(<a href="http://onlinelibrary.wiley.com/doi/10.1111/geb.12146/abstract" target="_blank">Blonder, B. et al,. 2014</a>)" 
+				supported in function "Export to ENMs".</li>
+				
+				</ul>
+				
+				<ul>
+				<li>Fixed bugs.</li>
+				<ul>
+					<li>Fixed the bug in 'Threshold calculator' which causes NicheA crash on Windows when the raster file is locked by the software outside of NicheA (opened in ArcGIS for instance).</li>
+					<li>Fixed the HTML issue caused by "&lt;" and "&gt;" symbols.</li>
+				</ul>
+				</ul>
+				
+				<h3>Release: 3.0.6 [11 May, 2015]</h3>
+				<ul>
+				<li>Enhanced 'Controls' menu.</li>
+				<ul>
+					<li>Added a new function, "Show/Hide Axes" to control the axes in the scenario.</li>
+					<li>Split "Reset" function to "Switch to X, Y view", "Switch to X, Z view" and "Switch to Y, Z view", which give a multiple angle pan views to user.</li>
+				</ul>
+				</ul>
+				
+				<h3>Release: 3.0.5 [4 May, 2015]</h3>
+				<ul>
+				<li>Solved the HTML Viewer issue in Linux version.</li>
+				
+				</ul>
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

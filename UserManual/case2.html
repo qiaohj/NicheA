@@ -1,0 +1,103 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>Determine the appropriate threshold value by calculating the niche overlap and the distance of two niche centroids.</h2>
+				<hr>
+				
+				<p>
+				<div class="tip"><p><b>Note:</b></p>
+				<p>The data used in this case study can be downloaded via <a href="http://sourceforge.net/projects/nichea/files/Samples/maxent_sample.zip/download" target="_blank">this link</a>.</p>
+				</div>
+				</p>
+				
+				
+				<p>From Fig.2 in <a href="case1.html">Case 1</a>, we can see that ‘Equal training sensitivity and specificity’ 
+				(blue ellipsoid) is closer to the original <b>N</b> (white) intuitively. We can also calculate the similarities quantitatively 
+				in NicheA.</p>
+
+<p>In the ‘Toolbox’ menu, ‘<a href="function_niche_overlap.html">Quantifying niche similarity</a>’ submenu, we can find the function to 
+quantify niche similarity by calculating the overlap of two ellipsoids (Fig. 1). Because we want to calculate the overlap of the original 
+N with all the other results, we select ‘virtual_species’ in the first drop-down list, and check ‘Loop Comparison’ on the right of the 
+next drop-down list. Because we want to calculate the overlap of ellipsoids, the ‘Calculation Method’ is set to ‘MVE’.</p>
+<p><div class="image_legend"><b>Figure 1</b>. Quantifying niche similarities of the original <b>N</b> and Maxent’s result with different threshold values.</div></p>
+<p><img src="images/figures/cases/case2/case2_fig1.png" class="figure"/></p>
+
+<p>Then we can get the overlap results (Table 1).</p>
+<p><div class="image_legend"><b>Table 1</b>. The niche similarities between the original <b>N</b> and the Maxent result with different threshold values.</div></p>
+<table><tr><th>VS1</th><th>	VS1 MVE Volume</th><th>	VS2 (Threshold method)</th><th>	VS2 MVE Volume</th><th>	Overlap</th><th>	Overlap/VS1</th><th>	Overlap/VS2</th></tr>
+<tr><td>origin</td><td>	39.290</td><td>	Balance training omission, predicted area and threshold value</td><td>	144.882</td><td>	39.290</td><td>	1</td><td>	0.271</td></tr>
+<tr><td>origin</td><td>	39.290</td><td>	Maximum training sensitivity plus specificity</td><td>	90.619</td><td>	39.290</td><td>	1</td><td>	0.434</td></tr>
+<tr><td>origin</td><td>	39.290</td><td>	10 percentile of training presence</td><td>	74.425</td><td>	39.176</td><td>	0.997</td><td>	0.5264</td></tr>
+<tr><td>origin</td><td>	39.290</td><td>	Equal training sensitivity and specificity</td><td>	57.021</td><td>	37.697</td><td>	0.959</td><td>	0.6614</td></tr>
+</table>
+ 
+	<p>So, if we require the thresholded result to contain at least 95% information of the original <b>N</b> with a highest threshold value, 
+	the 'Equal training sensitivity and specificity' method is likely to be the ‘best’ method.</p>
+	<div class="tip"><p><b>Note:</b></p> <p>The sentence above is only an example, but not a standard to measure the 'best' threshold method.
+	You must pick your own method from your specific scientific question.</p> </div>
+				
+	<p>We can also choose the ‘best’ threshold value by calculating the distance to the niche centroid. 
+	Click ‘Toolbox’–‘Show <b>N</b> attributes’, where the coordinates of the ellipsoid will be available (Fig. 2).</p>  
+<p><div class="image_legend"><b>Figure 2</b>. Show <b>N</b> attributes. The content in the red circle is the coordinates of the ellipsoid’s center (MVE).</div></p>
+<p><img src="images/figures/cases/case2/case2_fig2.png" class="figure"/></p>
+ 
+
+<p>After reading the coordinates and calculating the Euclidean distances from the two centers, we can get Table 2 and 3. In this manual, we won’t interpret the results in detail, because each case is unique, and should be interpreted comprehensively.</p>
+
+<p><div class="image_legend"><b>Table 2</b>. The coordinates of the ellipsoid’s centroid.</div></p>
+
+<table>
+<tr><th>Ellipsoid label (Threshold method)</th><th>	x</th><th>	y</th><th>	z</th></tr>
+<tr><td>Original</td><td>	2.471252</td><td>	-1.15762</td><td>	0.37744</td></tr>
+<tr><td>Balance training omission, predicted area and threshold value</td><td>	2.522364</td><td>	-1.08732</td><td>	0.304633</td></tr>
+<tr><td>Maximum training sensitivity plus specificity</td><td>	2.547513</td><td>	-1.20877</td><td>	0.467751</td></tr>
+<tr><td>10 percentile of training presence</td><td>	2.548166</td><td>	-1.30262</td><td>	0.492427</td></tr>
+<tr><td>Equal training sensitivity and specificity</td><td>	2.64899</td><td>	-1.40261</td><td>	0.645102</td></tr>
+</table>
+
+<p><div class="image_legend"><b>Table 3</b>. The center distances between the original <b>N</b> and Maxent’s result with different threshold values.</div></p>
+
+<table>
+<tr><th></th><th>Balance training omission, predicted area and threshold value</th><th>Maximum training sensitivity plus specificity</th>
+<th>10 percentile of training presence</th><th>	Equal training sensitivity and specificity</th></tr>
+<tr><td><b>Original</b></td><td>	0.113383</td><td>	0.128792</td><td>	0.200403342</td><td>	0.404044427</td></tr>
+</table>
+				
+				
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

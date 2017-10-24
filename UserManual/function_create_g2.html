@@ -1,0 +1,116 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>Generate a <b>N</b> from another <b>N</b> or the overlap of other two <b>N</b>s.</h2>
+				<hr>
+				<p>In this section, we introduce the other functions to generate <b>N</b> on the 3D BC, which was generated in 
+				"<a href="function_create_bc.html">Create a background cloud (BC)</a>".</p>
+				
+				<h3>Prepare the <b>N</b>s</h3>
+				<p>First, we create three <b>N</b>s. <b>N</b> No.2 and No.3 are partially overlapping. <b>N</b> No.1 is isolated with them (Fig. 1). After generating the <b>N</b>s, we use the "Open <b>N</b>(s)" menu (Fig.2) to open
+				them with different colors (Fig. 3), which <b>N</b> No.1 is in <span style="background-color: black; color:yellow">yellow</span>, No.2 is in 
+				<span style="background-color: black; color:red">red</span>, and No.3 is in <span style="background-color: black; color:green">green</span>.</p>
+				
+				<div class="tip"><p><b>Note:</b></p> <p><li>NicheA can export the configuration of a <a href="glossary.html">selection</a> to a file, so that you can 
+				reset the selection's status or transfer a selection from one scenario to another. Click <a href="selection.html">
+				here</a> to get more detail about this process.
+				
+				<li>Three <b>N</b>s generated in this paragraph above can be downloaded via <a href="http://sourceforge.net/projects/nichea/files/Samples/3d_origins.zip/download" target="_blank">this link</a>.</p> </div>
+				
+				
+				<p><div class="image_legend"><b>Figure 1</b>. 
+			   Create three <b>N</b>s on the different localities of BC.</div></p>
+			   <p><img src="images/figures/functions/create_g/function_create_g2_fig1.png" class="figure"/></p>
+			   
+			   <p><div class="image_legend"><b>Figure 2</b>. 
+			   The menu to open the generated <b>N</b>(s).</div></p>
+			   <p><img src="images/figures/functions/create_g/function_create_g2_fig2.png" class="figure"/></p>
+			   
+			   <p><div class="image_legend"><b>Figure 3</b>. 
+			   Open the <b>N</b>s with different colors.</div></p>
+			   <p><img src="images/figures/functions/create_g/function_create_g2_fig3.png" class="figure"/></p>
+			   
+			   <h3>Generate a <b>N</b> from another <b>N</b></h3>
+			   <p>We create a selector which overlaps with <b>N</b> No.1, but doesn't overlap with <b>N</b> No.2 and No.3 (Fig.4). Then we invoke the "Create a virtual <b>N</b>" function in the menu, 
+			   which we have used in <a href="function_create_g.html">the previous section</a>. But the dialog is a little different with the previous one (Fig. 5). Two <b>N</b> lists in this dialog are selectable 
+			   which were blank. After selecting <b>N</b> No.1 in the second list, and clicking the "OK" button, a new <b>N</b> is saved successfully. When you open the new <b>N</b>, you can see that the new one 
+			   (in <span style="background-color: black; color:blue">blue</span>) is inside of both <b>N</b> No.1 and the selector in both E space(Fig. 6) and G space (Fig. 7).</p>
+			   <div class="tip"><p><b>Note:</b></p>
+				<p> The <b>N</b> can be downloaded via <a href="http://sourceforge.net/projects/nichea/files/Samples/g1_sub.zip/download" target="_blank">this link</a>.</p>
+				</div>
+			    <p><div class="image_legend"><b>Figure 4</b>. 
+			   Create a selector which overlaps with <b>N</b> No.1. </div></p>
+			   <p><img src="images/figures/functions/create_g/function_create_g2_fig4.png" class="figure"/></p>
+			   
+			   <p><div class="image_legend"><b>Figure 5</b>. 
+			   The "Create a virtual <b>N</b>" dialog with two selectable dropdown list.</div></p>
+			   <p><img src="images/figures/functions/create_g/function_create_g2_fig5.png" class="figure"/></p>
+			   
+			   <p><div class="image_legend"><b>Figure 6</b>. 
+			   The new <b>N</b> (in <span style="background-color: black; color:blue">blue</span>) which is inside of both <b>N</b> No.1 and the selector in both E space.</div></p>
+			   <p><img src="images/figures/functions/create_g/function_create_g2_fig6.png" class="figure"/></p>
+			   
+			   <p><div class="image_legend"><b>Figure 7</b>. 
+			   <b>N</b> No.1 and the subset of <b>N</b> No.1 in G space. The subset is in <font color="blue">blue</font>, and <b>N</b> No.1 equals to <font color="blue">blue</font> + <font color="yellow">yellow</font>.</div></p>
+			   <p><img src="images/figures/functions/create_g/function_create_g2_fig7.png" class="figure"/></p>
+			   
+			   <h3>Generate a <b>N</b> from the overlap of other two <b>N</b>s</h3>
+			   <p> Let's go back to the dialog in Fig.5. We check the radiobox "By MVE of <b>N</b> below:", and select <b>N</b> No.2 in the first dropdown list. In the second dropdown list, we select <b>N</b> No.3. 
+			   After clicking the "OK" button, a new <b>N</b> is saved to the selected folder. If we open it in NicheA, we get the Fig.8. And if we open the raster file in <b>N</b> folder in ArcGIS, we get Fig.9. 
+			   In Fig.8, we can see that the new <b>N</b> (in <span style="background-color: black; color:yellow">yellow</span>) is inside of both <b>N</b> No.2 and No.3. 
+			   In Fig.9, the <font color="yellow">yellow</font> areas are also the overlap of <font color="red">red</font> and <font color="green">green</font> areas.</p> 
+			   
+			   <div class="tip"><p><b>Note:</b></p>
+				<p> The <b>N</b> can be downloaded via <a href="http://sourceforge.net/projects/nichea/files/Samples/overlap_g2_g3.zip/download" target="_blank">this link</a>.</p>
+				</div>
+				
+			   <p><div class="image_legend"><b>Figure 8</b>. 
+			   Generate a <b>N</b> which is the overlap of <b>N</b> No.2 and <b>N</b> No.3.</div></p>
+			   <p><img src="images/figures/functions/create_g/function_create_g2_fig8.png" class="figure"/></p>
+			   
+			   <p><div class="image_legend"><b>Figure 9</b>. 
+			   The scenario above in G space.</div></p>
+			   <p><img src="images/figures/functions/create_g/function_create_g2_fig9.png" class="figure"/></p>
+			   
+			   
+			   <h3>Epilogue</h3>
+			   
+			   <p>In this section, we introduced two ways to generate <b>N</b>. But the ways for generating <b>N</b> are not limited to these. In the following sections, we will introduce more options, 
+			   such as generating a <b>N</b> from an ENM's result, moving a <b>N</b> from one BC to another, and so on. We believe that you can invite more methods with your extraordinary imagination!</p>
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

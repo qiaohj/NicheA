@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>Variable normalization/standardization</h2>
+				<hr>
+				<p>In the overall ecological modeling process, before modeling itself, data preprocessing plays a crucial role. 
+				One of the first steps concerns the normalization of the data. This step is very important when dealing with 
+				parameters of different units and scales (Temperature vs Precipitation for instance). 
+				For example, some ENMs use the Euclidean distance. Therefore, all parameters should have the same scale for 
+				a fair comparison between them. Two methods are usually well known for rescaling data. 
+				Normalization, which scales all numeric variables in the range [0,1]. One possible formula is given below:
+				</p>
+				<p><img src="images/figures/functions/standardization/formula1.png"/></p>
+				<p>On the other hand, you can use standardization on your data set. 
+				It will then transform it to have zero mean and unit variance, for example using the equation below:</p>
+				<p><img src="images/figures/functions/standardization/formula2.png"/></p>
+				<p> In NicheA, we use "Variable normalization/standardization" function to standardized the environmental variables (Fig.1) 
+				which are stored as supported raster formats (GeoTiff ot ASC). The function can regard the all the selected variables as 
+				group (uncheck the "standardized individually" in Fig. 2) or individually (check the "standardized individually"), and
+				standardize the variables with one of the method above.</p>
+				
+				<p><img src="images/figures/functions/standardization/function_standardization_fig1.png" class="figure"/></p>
+			   <p><div class="image_legend"><b>Figure 1</b>. 
+			   The menu to envoke the "Variable normalization/standardization" function.</div></p> 
+			   
+			   <p><img src="images/figures/functions/standardization/function_standardization_fig2.png" class="figure"/></p>
+			   <p><div class="image_legend"><b>Figure 2</b>. 
+			   <li>Click the "Add" button to add the raster files which is/are standardized. 
+			   <li>The "Remove" button is used to remove the selected files in the list on the left side.
+			   <li>You have to options to standardize the variables via selecting one of the methods via the dropdown list.
+			   <li>When you check the "standardized individually", NicheA will standardize the selected variables individually. 
+			   When you uncheck it, NicheA will regard all the variables as a group, and standardize them.
+			   <li>All the results will be saved in to the folder in the last text field with the same name as the original names.
+			   </div></p> 
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

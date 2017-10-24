@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>Update NicheA</h2>
+				<hr>
+				
+				<p>Using the the menu in Fig.1, you can compare the version on your computer and the latest version on server. Following the steps below, you can update NicheA to the latest version easily.</p>
+				<p class="image_legend"><b>Figure 1.</b> The menu for checking for update.</p>
+				<p><img src="images/figures/installation/update.png" class="figurefull"/></p>
+				
+				<p>In Linux, you can overwrite <a href="http://sourceforge.net/projects/nichea/files/Installations/Linux/nichea.jar/download" target="_blank">
+				<b>'nichea.jar'</b></a> to update NicheA directly. In Windows you need to re-install the newest NicheA to update it.
+				In Mac OS X, you need to overwrite NicheA.app to update NicheA.</p>
+				
+				<p>In Windows and Mac OS X, you have another opinion to update NicheA via downloading and overwriting the JAR directly, rather than
+				 download a full big installation file. The Jar file for Windows
+				is <a href="http://sourceforge.net/projects/nichea/files/Installations/Windows/nichea.jar/download" target="_blank">here</a>, and for Mac OS X is <a href="http://sourceforge.net/projects/nichea/files/Installations/Mac/nichea.jar/download" target="_blank">here</a>. </p>
+				<p>In Windows, you need to go to the folder you 
+				installed NicheA (by default "c:\Program Files\Niche Analyst 3.0\"), and overwrite the corresponding JAR file. </p>
+				
+				<p>In Mac OS X (Assuming you have copy <b>NicheA.app</b> to your <b>Applications</b> folder), open 'Applications' folder, right click ‘NicheA.app’, select ‘Show Package Contents’.
+				Then go to '<b>Java</b>' folder, copy the downloaded '<b><a href="http://sourceforge.net/projects/nichea/files/Installations/Mac/nichea.jar/download" target="_blank">
+				nichea.jar</a></b>' file to this folder and overwrite the existing one.</p>
+				
+				<p>Before you overwrite the '<b>nichea.jar</b>' file, we suggest you backup the original one. Once you have any trouble to use the new version, you can go back
+				to a previous version easily.</p>   
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>Move a niche definition (an ellipsoid definition) from one scenario to another.</h2>
+				<hr>
+				<p>There is a growing interest in using ENM to look for patterns of niche conservatism among different environmental 
+				scenarios. Here we show a case study in which we calibrated the model in a past environment, and then we projected 
+				the model to current environments for evaluation. To increase the independence in our model, we use different geographic 
+				areas of central Chile for each case (Fig. 1). In this case, we used vegetation indexes (NDVI) from past and current scenarios 
+				as environmental variables, but climatic data could also be used. We employed MaxEnt as the modeling algorithm, transferring 
+				the model (no clamping, no extrapolation) from the past environments and geographic area to the present environmental 
+				scenario and area (Fig. 1).</p>
+<p><div class="image_legend"><b>Figure 1</b>. 
+Left: calibration area (top and bottom gray plates), using past occurrences (green) and environments (year 2002). Right: evaluation area (middle gray plate), using present occurrences (red) and environments (year 2012).
+</div></p>
+<p><img src="images/figures/cases/case3/case3_fig1.png" class="figure"/></p>
+
+
+
+<p>NicheA makes it possible for the first time to visualize niche model transferences from different environmental scenarios in a 3D 
+space (Fig. 2). First, we generated an ENM for our target species calibrating the model in specific areas with past environments and 
+occurrences. Then, we made a second ENM using current environments and occurrences, but in a different geographic area (Fig. 1). 
+Both models (past and present) were displayed under the same environmental scenario. As our environmental scenario (background) 
+we used the current environments (year 2012), the model from the past occurrences and environment (year 2002) were fitted on the 
+current available environments in the study area. This allows comparing predictions from past and present scenarios. In our example, 
+the model from the past predicted correctly the occurrences from the present, even when the MaxEnt calibration was made under different 
+environments and geographic areas (Fig. 1).
+ 
+<p><div class="image_legend"><b>Figure 2</b>. 
+Environmental display of niche models from the past (red) predicting the present (green). Remote sensing data was used as background. Models are visualized under current environments.
+</div></p>
+<p><img src="images/figures/cases/case3/case3_fig2.png" class="figure"/></p>
+
+
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

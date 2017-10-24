@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>Principal Component Analysis in NicheA</h2>
+				<hr>
+				<p>The "Principal Component Analysis" function is used to generate principal components (PC) with 
+				given raster layers using Principal Component Analysis, and transfer to a new group of raster layers or not.
+				The results are saved as another groups of rasters files in GeoTiff format with the same attributes as the original rasters.
+				The detail of PCA can be referred via its 
+				<a href="http://en.wikipedia.org/wiki/Principal_component_analysis" target="_blank">Wikipedia page</a>.
+				</p>
+				<p>A folder named "background" is created in the result folder which can be envoked in NicheA to draw BC directly.
+				</p>
+				<p>All the PCA related attributes including "rotation" and "proportion of variances" 
+				are saved in the result folder as well.
+				</p>
+				
+				<h3>The process to use "Principal Component Analysis" function in NicheA</h3>
+				<li>1. Click "Principal Component Analysis" in main menu. (Fig. 1)</li>
+				
+				<p><div class="image_legend"><b>Figure 1</b></div></p>
+				<p><img src="images/figures/functions/pca/functions_pca_fig1.png" class="figurefull"/></p>
+				 
+				<li>2. Select the original raster files to generate principal components (Fig. 2). If you want to transfer the PCA to another group of environmental layers, you need to check the 
+				checkbox between two list, and add the raster files to the second list. The number of the raster files in two lists must be equivalent.
+				Here you can <a href="http://sourceforge.net/projects/nichea/files/Samples/bioclim.zip/download" target="_blank">
+				download the sample</a> for this function. The raster files in the sample were downloaded from <a href="http://www.worldclim.org/bioclim" target="_blank">Worldclim</a> and 
+				converted by function <a href="function_conversion_tool.html">"Conversion tool for raster file"</a> in NicheA.</li>
+				
+				<p><div class="image_legend"><b>Figure 2</b></div></p>
+				<p><img src="images/figures/functions/pca/functions_pca_fig2.png" class="figure"/></p>
+				
+				<li>3. After a couple of minutes, you can see a dialog to show the result (Fig. 3). You can click "Show in folder" button to see all the results, or click "OK" button to close the dialog.</li>
+				<p><div class="image_legend"><b>Figure 3</b></div></p>
+				<p><img src="images/figures/functions/pca/functions_pca_fig3.png" class="figure"/></p>
+				
+				<li>4. After you click the "Show in folder" button, NicheA will switch to the results (Fig. 4). If you checked the checkbox, the principal components calculated from the first list
+				 will be saved in the "origin" folder, and the transferred principal components will be saved in the "trans" folder. "origin" and "trans" folders have the same structure (Fig.5).
+				  If you didn't want to do a transfer, the result will be saved in the selected folder directly with the same structure as above.  </li>
+				<p><div class="image_legend"><b>Figure 4</b></div></p>
+				<p><img src="images/figures/functions/pca/functions_pca_fig4.png" class="figure"/></p>
+				
+				
+				<p><div class="image_legend"><b>Figure 5</b></div></p>
+				<p><img src="images/figures/functions/pca/functions_pca_fig5.png" class="figure"/></p>
+				
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

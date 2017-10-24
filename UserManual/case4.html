@@ -1,0 +1,69 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>Extract similar environmental combinations from two disjoint areas.</h2>
+				<hr>
+				<p>
+				When there is interest in evaluating the invasive potential of a species, determining the existence of similar 
+				environmental variables in native and invadable areas is critical. One example is the North American squirrel 
+				invasion in the United Kingdom (Fig. 1 and 2).</p>
+<p><div class="image_legend"><b>Figure 1</b>. 
+Left: occurrences in the native area of distribution in North America. Right: occurrences in the invadable areas in the United Kingdom.
+</div></p>
+<p><img src="images/figures/cases/case4/case4_fig1.png" class="figure"/></p>
+
+<p><div class="image_legend"><b>Figure 2</b>. 
+Native areas (blue) and the invasive (red) environments displayed in a 3Denvironmental space using NicheA.
+</div></p>
+<p><img src="images/figures/cases/case4/case4_fig2.png" class="figure"/></p>
+ 
+
+<p>NicheA facilitates identification of similar environments shared for native and invasive populations (Fig. 3 left). 
+Once we delimited similar environments, NicheA identified the geographic areas corresponding to similar environments (Fig. 3 right). 
+This identification of areas with similar environments improves the interpretation of model projections from native to invasive areas, 
+because it is easier to recognize areas with novel environments where niche model algorithms tend to extrapolate predictions.</p>
+
+<p><div class="image_legend"><b>Figure 3</b>. 
+Left: delimitation of similar environments for the native (blue) and invasive (red) squirrel populations (see the total environments available in Fig. 35). Right: NicheA projection to the geographic space of environments from the United Kingdom that are present in North America (red). Notice the blue areas in North America that represent strict extrapolation zones from the model calibrated in the United Kingdom (i.e., different environmental combinations).
+</div></p>
+<p><img src="images/figures/cases/case4/case4_fig3.png" class="figure"/></p>
+ 
+
+
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

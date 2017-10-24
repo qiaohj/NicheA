@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<functions>
+<function>
+	<function_name>open_species</function_name>
+	<name>Open N(s)</name>
+	<message>Open N(s)</message>
+</function>
+<function>
+	<function_name>close_species</function_name>
+	<name>Close N(s) / Export continuous distribution map / Export MVE</name>
+	<message>Close N(s) / Export continuous distribution map / Export MVE</message>
+</function>
+<function>
+	<function_name>clear_all</function_name>
+	<name>Clear scenario</name>
+	<message>Clear scenario</message>
+</function>
+<function>
+	<function_name>save_current_selection</function_name>
+	<name>Save current selection</name>
+	<message>Save current selection</message>
+</function>
+<function>
+	<function_name>open_selection</function_name>
+	<name>Open a selection</name>
+	<message>Open a selection</message>
+</function>
+<function>
+	<function_name>open_selections</function_name>
+	<name>Open multiple selections</name>
+	<message>Open multiple selections</message>
+</function>
+<function>
+	<function_name>draw_background_from_saved_package</function_name>
+	<name>Draw background cloud (BC) from a folder</name>
+	<message>Draw background cloud (BC) from a folder</message>
+</function>
+<function>
+	<function_name>draw_background_from_files</function_name>
+	<name>Draw background cloud (BC) from two or three environmental layers</name>
+	<message>Draw background cloud (BC) from two or three environmental layers</message>
+</function>
+<function>
+	<function_name>export_to_enm</function_name>
+	<name>Export to ENMs</name>
+	<message>Export to ENMs</message>
+</function>
+<function>
+	<function_name>close</function_name>
+	<name>Close</name>
+	<message>Close the application</message>
+</function>
+<function>
+	<function_name>create_virtual_species</function_name>
+	<name>Create a virtual N</name>
+	<message>Create a virtual N</message>
+</function>
+<function>
+	<function_name>generate_species_dataset</function_name>
+	<name>Generate N(s) based on the occurrence points</name>
+	<message>Generate N(s) based on the occurrence points</message>
+</function>
+<function>
+	<function_name>generate_species_dataset_mve</function_name>
+	<name>Generate N(s) based on MVE</name>
+	<message>Generate N(s) based on MVE</message>
+</function>
+<function>
+	<function_name>show_species_dataset_attributes</function_name>
+	<name>Show N attributes</name>
+	<message>Show N attributes</message>
+</function>
+<function>
+	<function_name>calculate_overlap</function_name>
+	<name>Quantify niche similarity</name>
+	<message>Quantify niche similarity</message>
+</function>
+<function>
+	<function_name>design_barrier</function_name>
+	<name>Design barriers</name>
+	<message>Design barriers</message>
+</function>
+<function>
+	<function_name>calculating_pca</function_name>
+	<name>Generate principal components</name>
+	<message>Generate principal components</message>
+</function>
+<function>
+	<function_name>raster_convert</function_name>
+	<name>Conversion tool for raster file</name>
+	<message>Conversion tool for raster file</message>
+</function>
+<function>
+	<function_name>threshold_variables</function_name>
+	<name>Threshold variables</name>
+	<message>Threshold variables</message>
+</function>
+<function>
+	<function_name>occurrence_distribution</function_name>
+	<name>Occurrence statistics</name>
+	<message>Occurrence statistics</message>
+</function>
+<function>
+	<function_name>voccur2geo</function_name>
+	<name>VirtualOccur2Geo</name>
+	<message>VirtualOccur2Geo</message>
+</function>
+<function>
+	<function_name>stat_variables</function_name>
+	<name>Variables statistics</name>
+	<message>Variables statistics</message>
+</function>
+<function>
+	<function_name>multivarnormal</function_name>
+	<name>Multivariate normal distribution</name>
+	<message>Multivariate normal distribution</message>
+</function>
+<function>
+	<function_name>threshold_calculate</function_name>
+	<name>Threshold calculator</name>
+	<message>Threshold calculator</message>
+</function>
+<function>
+	<function_name>read_data_from_multi_geotiff_files</function_name>
+	<name>Read data from multiply raster files.</name>
+	<message>Read data from multiply raster files.</message>
+</function>
+<function>
+	<function_name>variable_standardization</function_name>
+	<name>Variable normalization</name>
+	<message>Variable normalization</message>
+</function>
+<function>
+	<function_name>set_nodata_value</function_name>
+	<name>Set NO DATA value</name>
+	<message>Set NO DATA value</message>
+</function>
+<function>
+	<function_name>manage_workflow</function_name>
+	<name>Manage workflows</name>
+	<message>Manage workflows</message>
+</function>
+<function>
+	<function_name>application.title=</function_name>
+	<name>About</name>
+	<message>About</message>
+</function>
+<function>
+	<function_name>preferences</function_name>
+	<name>Preferences</name>
+	<message>Preferences</message>
+</function>
+<function>
+	<function_name>troubleshooting</function_name>
+	<name>Troubleshooting</name>
+	<message>Troubleshooting</message>
+</function>
+<function>
+	<function_name>showlog</function_name>
+	<name>Show log ...</name>
+	<message>Show log ...</message>
+</function>
+</functions>

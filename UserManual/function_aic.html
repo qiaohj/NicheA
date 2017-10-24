@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>Guide to obtain AIC (Akaike Information Criterion) with NicheA</h2>
+				<hr>
+				Guide to obtain AIC (Akaike Information Criterion) with NicheA
+
+<p>Nichea 3.0 implemented an option to the “model selection” tool in the ENMTOOLS software that can be employed for several model algorithms (e.g., GLM, NicheA, Maxent).</p>
+
+<p>In NicheA, select “Calculate AIC/BIC value” from the Toolbox menu.</p>
+<p><div class="image_legend"><b>Figure 1</b>. The menu to invoke this function</div></p>
+<p><img src="images/figures/functions/aic/function_aic_fig1.png" class="figurefull"/></p>
+ 
+
+
+<p>A window will appear with some options. Here we have to choose the proper files to calculate de AIC index. We will need to fill the textbox’s 
+at this order: occurrence points in.csv extension, the Maxent output in .asc file, and then the .lambdas file from the Maxent model.</p> 
+
+<p><div class="image_legend"><b>Figure 2</b>. The dialog for this function</div></p>
+<p><img src="images/figures/functions/aic/function_aic_fig2.png" class="figurefull"/></p>
+<p><div class="image_legend"><b>Figure 3</b>. Detail of the dialog for this function.</div></p>
+<p><img src="images/figures/functions/aic/function_aic_fig3.png" class="figure"/></p>
+<li>(1) The occurrence points in CSV format with the same format used in the other functions in NicheA, compatible with Maxent format.</li>
+<li>(2) Using the “Add” button we select the .asc or .tif file obtained after the Maxent analysis in raw format. 
+For models other than Maxent, raster values must be rescale to sum 1 for the entire raster. 
+You can use "<a href="function_rescale.html">Change the range of ENM's result</a>" function to finish this step.</li> 
+<li>(3) Use the “Get from Maxent’s ‘.lambdas’ file” to select the .lambdas file from the Maxent analysis.<br/> 
+The “number of parameters” used by this file will appear, in this case “2.” You can explore the number o Maxent’s parameters by opening the .lambdas 
+file with a text editor and look for the parameters used. For models other than Maxent you can write the number of parameters in this section.
+</li>
+
+<p><div class="image_legend"><b>Figure 4</b>. A sample .lambdas file generated in Maxent.</div></p>
+<p><img src="images/figures/functions/aic/function_aic_fig4.png" class="figure"/></p>
+
+<p>Finally we select “OK” and then we wait for the pop up window with the result:</p>
+
+<p><div class="image_legend"><b>Figure 5</b>. The result for this function</div></p>
+<p><img src="images/figures/functions/aic/function_aic_fig5.png" class="figure"/></p>
+
+
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

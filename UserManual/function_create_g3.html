@@ -1,0 +1,93 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>Create barriers to separate a <b>N</b> into two <b>N</b>s.</h2>
+				<hr>
+				
+				<div class="tip"><p><b>Note:</b></p> <p>The sample in this section is based on the <b>N</b> No.2 in 3D E space, which was created in <a href="function_create_g2.html">
+				the previous section</a>. Before you try this section, you should open the 
+				<a href="http://sourceforge.net/projects/nichea/files/Samples/pca.zip/download" target="_blank">BC</a> and 
+				<a href="http://sourceforge.net/projects/nichea/files/Samples/g2.zip/download" target="_blank"><b>N</b> No.2</a>.</p> </div>
+				<p/>
+				<p>The BARRIERS are a kind of implementation of M (Mobility) in <a href="https://journals.ku.edu/index.php/jbi/article/view/4" target="_blank">
+				BAM (Biotic, Abiotic, Mobility, or BAM) framework</a>. In NicheA, you can design a barriers based on a <b>N</b>. The function's entrance is in Fig. 1. After clicking 
+				the menu, a dialog appears to pick a <b>N</b> to design barriers (Fig.2). After you pick a <b>N</b>, NicheA will map it to G space which is shown as a map. In this map, you can design
+				a polygon by your mouse. When you click the map, NicheA will create a vertex, and connect the vertex with the previous one. After you double click on the map, NicheA will 
+				connect the first vertex and the last one to generate a polygon (Fig.3). Then you can click the "Generate" button and give a name to the polygon (Fig.4),
+				NicheA will help you to split the map into two parts, which are save in the same folder in the <b>N</b> which are named as "in" and "out" (Fig.5). "in" means all the areas inside
+				of the polygon. "out" means the other areas. Both of "in" and "out" are independent <b>N</b>s which you can open in NicheA (Fig. 6 and 7). You can also open the GeoTiff files in the 
+				corresponding folder to show the map in G space in ArcGIS (Fig.8). </p>
+				
+				<div class="tip"><p><b>Note:</b></p>
+				<p> The <b>N</b> can be downloaded via <a href="http://sourceforge.net/projects/nichea/files/Samples/g2.zip/download" target="_blank">this link</a>.</p>
+				</div>
+				
+				<p><div class="image_legend"><b>Figure 1</b>. 
+			   The menu of "Design barriers function".</div></p>
+			   <p><img src="images/figures/functions/create_g/function_create_g3_fig1.png" class="figure"/></p> 
+				
+				<p><div class="image_legend"><b>Figure 2</b>. 
+			   Pick a <b>N</b> to create barriers in G space.</div></p>
+			   <p><img src="images/figures/functions/create_g/function_create_g3_fig2.png" class="figure"/></p> 
+			   
+			   <p><div class="image_legend"><b>Figure 3</b>. 
+			   Design barriers in G space.</div></p>
+			   <p><img src="images/figures/functions/create_g/function_create_g3_fig3.png" class="figure"/></p> 
+			   
+			   <p><div class="image_legend"><b>Figure 4</b>. 
+			   Input the barriers' name.</div></p>
+			   <p><img src="images/figures/functions/create_g/function_create_g3_fig4.png" class="figure"/></p> 
+			   
+			   <p><div class="image_legend"><b>Figure 5</b>. 
+			   The "in" and "out" folder in <b>N</b>'s folder. "in" means all the areas inside
+				of the polygon. "out" means the other areas. </div></p>
+			   <p><img src="images/figures/functions/create_g/function_create_g3_fig5.png" class="figure"/></p> 
+			   
+			   <p><div class="image_legend"><b>Figure 6</b>. 
+			   Open "in" as a <b>N</b>.</div></p>
+			   <p><img src="images/figures/functions/create_g/function_create_g3_fig6.png" class="figure"/></p> 
+			   
+			   <p><div class="image_legend"><b>Figure 7</b>. 
+			   Opened <b>N</b> No.2 (in yellow), "in" (in green) and "out" (in blue). </div></p>
+			   <p><img src="images/figures/functions/create_g/function_create_g3_fig7.png" class="figure"/></p> 
+			   
+				<p><div class="image_legend"><b>Figure 8</b>. 
+			   The <b>N</b>s in G space. "in" is in green and "out" is in blue. Although they are quite different in G space. But they are similar in E space which is shown in Fig.7.</div></p>
+			   <p><img src="images/figures/functions/create_g/function_create_g3_fig8.png" class="figure"/></p> 
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

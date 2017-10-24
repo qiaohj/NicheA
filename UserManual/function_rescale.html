@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>Change the range of ENM's result</h2>
+				<hr>
+				<p>The ranges of ENMs' result are based on the software you use. Maxent generates a [0, 1] result with default settings. openModeller's result is [0, 100], and BIOMOD2 is [0, 1000].
+				Before comparing the results created from different ENM software, you need universalize the range of the ENM.</p>
+				<p><div class="image_legend"><b>Figure 1</b>. The menu to invoke this function</div></p>
+				<p><img src="images/figures/functions/rescale/function_rescale_fig1.png" class="figure"/></p>
+				<p>After selecting the required raster files, and set up the relevant parameters in the dialog (Fig.2), you can convert the ENM result from one range to another. 
+				If you don't know the range of the original raster file clearly, the button "Read range" will ask NicheA to calculate the range of the first selected raster file, 
+				and set up the "From range" automatically.</p>
+				
+				<p><div class="image_legend"><b>Figure 2</b>. The dialog of this function</div></p>
+				<p><img src="images/figures/functions/rescale/function_rescale_fig2.png" class="figure"/></p>
+				
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

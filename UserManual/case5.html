@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>Analyze niche components intuitively</h2>
+				<hr>
+				<p><a href="http://ac.els-cdn.com/S0169534714000469/1-s2.0-S0169534714000469-main.pdf?_tid=314f350a-e321-11e4-8233-00000aacb360&acdnat=1429069423_da7252dbe4e847a5593cf3b20ff1758e" target="_blank">
+				Guisan et al., (2014)</a> noted the importance of distinguishing different niche components when determining whether or not a species’ 
+				niche was conservative. NicheA provides a novel function to observe different niche components intuitively.</p>
+				
+<p>Assume we have a virtual species whose native distribution area is North America, and the exotic distribution area is Europe (Fig. 1). 
+After generating two <b>N</b>s based on the occurrences above (Fig. 1), a scenario in E space can be drawn in NicheA (Fig. 2). Fig. 3 shows 
+this scenario and interrelated components in Guisan et al. (2014). 
+</p>
+<p><div class="image_legend"><b>Figure 1</b>. 
+A virtual species whose native distribution area is North America, and the exotic distribution area is Europe. The green points are the occurrences in the native area. Red points are the occurrences in the invasive area.
+</div></p>
+<p><img src="images/figures/cases/case5/case5_fig1.png" class="figure"/></p>
+
+<p><div class="image_legend"><b>Figure 2</b>. 
+Generate <b>N</b>(s) based on the occurrence points.
+</div></p>
+<p><img src="images/figures/cases/case5/case5_fig2.png" class="figure"/></p>
+
+<p><div class="image_legend"><b>Figure 3</b>. 
+The relationship between niche components outlined in Guisan et al. (2014) in conjunction with the virtual scenario in NicheA. The red ellipsoid is the native niche of the virtual species. The red points inside the ellipsoid are the occurrence points from the native distribution area. The green ellipsoid is the invaded niche, and the green points within the ellipsoid are the occurrence points from the invasive area. The arrows show the relationship between the different components and the two diagrams.
+</div></p>
+<p><img src="images/figures/cases/case5/case5_fig3.png" class="figure"/></p>
+ 
+  
+
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

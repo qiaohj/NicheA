@@ -1,0 +1,156 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<a name="windows"></a>
+				<h2>Install NicheA on Windows 7 64bit</h2>
+				<hr/>
+				<h3>1. Make sure you have Java Runtime Environments (JRE) and Java Development Kit (JDK) 1.6+ 64bit on your computer. </h3>
+				<p>Based on our existing experiences, JRE and JDK related issue was the very first and most important problem which blocked 
+				a neophyte to use NicheA on Windows. Thus, we rewrote this section to make sure that anyone can install a suitable Java environment
+				on his/her Windows computer.</p>
+				
+				<p>If you see the dialog when you launch NicheA after installing, it means you are working under a 32bit JRE/JDK environment.</p>
+				<p><div class="image_legend"><b>Figure 1</b>. You will read this message if your computer is working under a 32bit JDK environment.</div></p>
+ 			   <p><img src="images/figures/installation/installation_win_fig1.png" class="figure"/></p>
+				
+				<p>NicheA works on JDK 1.6+ 64bit only. By default, MS Windows 7 pre-installed a JRE 1.7 32bit. And you can't overwrite it 
+				by installing JDK 1.6+ 64bit. In other words, even you install JDK 1.8 64bit on your computer, you are still using the pre-installed
+				 JRE 1.7 32bit. You can use the following method to detect the JDK version on your computer.</p>
+				 <li>(1) Open a Command Prompt window. This page shows how to "
+				 <a href="http://windows.microsoft.com/en-us/windows-vista/open-a-command-prompt-window" target="_blank">
+				 open a command prompt window</a>".</li>
+				 <li>(2) Run the command below.</li>
+				 <div class="syntaxhighlighter">
+					> java -d64
+				</div>
+				
+				<p>When you read the following message, it means you haven't installed any JRE/JDK on your computer. The JDK 1.8 64 bit for Windows can be downloaded via 
+				<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">JDK official website</a> or
+				 <a href="https://sourceforge.net/projects/nichea/files/JDK/jdk-8u60-windows-x64.exe/download" target="_blank">our mirror side.</a></p>
+				<div class="syntaxhighlighter">
+				Error: opening registry key 'Software\JavaSoft\Java Runtime Environment'<br>
+				Error: could not find java.dll<br>
+				Error: Could not find Java SE Runtime Environment.
+				</div>
+				
+				<p>If you read the following message, it means the JRE on your computer is in 32bit.</p>
+				<div class="syntaxhighlighter">
+				Error: This Java instance does not support a 64-bit JVM.</br>
+				Please install the desired version.
+				</div>
+				 
+				 <p>Two solutions can solve this problem. You can select any of them based your requirements.</p>
+				 <li>(1) The recommended and the easiest way is removing the installed JDK 32bit from your computer. In "Programs and Features" in "Control Pane", 
+				 you can find all the installed JRE/JDK on your computer. Remove all the JRE/JDK without 64bit, and reinstall JDK 1.8 if needed. Fig.2 shows
+				  an list on a testing computer, which installed 2 JDK (32bit and 64bit). Now we need to remove the JDK in 32bit.</p>  
+				 <a href="http://windows.microsoft.com/en-us/windows/uninstall-change-program#uninstall-change-program=windows-7" target="_blank">
+				 This page</a> tells you how to remove/unisntall a program in Windows 7. </li>
+				   <p><div class="image_legend"><b>Figure 2</b>. A list shows all the installed JDK on a computer.</div></p>
+ 			   <p><img src="images/figures/installation/installation_win_fig2.png" class="figure"/></p> 
+				 <li>(2) (Advanced user only) If you want to keep both JDK 32bit and 64bit on your computer, you can change the shortcuts of JDK. 
+				 When you run "where java" in a Command Prompt window, it will tell you the working copy of 'java' command on your computer. On the 
+				 testing computer, it tells me the 'java' command is in "C:\ProgramData\Oracle\Java\javapath\java.exe". It is not a real executable 
+				 command, but a shortcut pointing to the real location of JDK. If you want to keep it, you just need to change their name (java32 for example).
+				 Then you can create a group of new shortcuts which point to JDK 64bit, and replace the original files.</li>
+				 <p/>
+				 <p>The JDK 1.8 64 bit for Windows can be downloaded via 
+				<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">JDK official website</a> or
+				 <a href="https://sourceforge.net/projects/nichea/files/JDK/jdk-8u60-windows-x64.exe/download" target="_blank">our mirror side.</a></p>
+				 
+				 <p>After installing right JDK, you can go to the next step, installing R on your computer</p>
+				 
+				<p>For more information, you can refer the following webpages:</p>
+				<li><a href="https://www.java.com/en/download/help/version_manual.xml" target="_blank">How can I find which version of Java is installed without running an applet in Windows or Mac?</a></li>
+				<li><a href="http://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html" target="_blank">JDK 8 and JRE 8 Installation Start Here</a></li>
+				<li><a href="http://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html" target="_blank">How do I manually download and install Java for my Windows computer?</a></li>				
+				</p>
+				
+				<h3>2. Install R and install required packages on Windows.</h3>
+				<p>Download <a href="http://www.r-project.org/" target="_blank">R</a>, and install.</p>
+
+				<p>Run the following script in R environment to install required packages manually.</p>
+
+				<div class="syntaxhighlighter">
+					> install.packages("ggplot2")
+					<br/>
+					> install.packages("raster")
+					<br/>
+					> install.packages("rgdal")
+				</div>
+				
+				
+				<h3>3. Install NicheA.</h3>
+				<p>Download <a href="https://sourceforge.net/projects/nichea/files/Installations/Windows/nichea_setup_3.0.exe/download" target="_blank">NicheA installation (64bit). </a></p>
+				<p>Double click the downloaded file to install NicheA on Windows.</p>
+				<div class="tip"><p><b>Note:</b></p> <p>NicheA installation file can detect and remove the old version automatically.</p> </div>
+				
+				<p/>
+				
+				<h3>4. A video for Niche Analyst setup & installation on Windows (old version).</h3>
+				<p><iframe width="420" height="315" src="//www.youtube.com/embed/-cd32PscglI" frameborder="0" allowfullscreen></iframe></p>
+				
+				<h3>5. Run NicheA</h3>
+				<p>You can run NicheA by clicking <img src="images/nichea_in_start_menu.png"/> from the <b>Start</b> menu.</p>
+				<p>If NicheA can’t launch by clicking its icon, you need to run NicheA from <b>Command Prompt</b> to find the reason. If you want to run NicheA from <b>Command Prompt</b>, please following the steps:
+				<p>
+				<li>Open the <b>Command Prompt</b> window by clicking the <b>Start</b> button <img src="images/win.png"/>  , clicking <b>All Programs</b>, clicking <b>Accessories</b>, and then clicking <b>Command Prompt</b>.</li>
+				<li>Run the following command to enter the NicheA folder.<div class="syntaxhighlighter">cd "c:\Program Files\Niche Analyst 3.0\"</div></li>
+				<li>Run command to launch NicheA in a terminal with debug informations.<div class="syntaxhighlighter">nichea.bat</div></li>
+				<li>Read the exception message and try to solve the problem following the message.</li>
+				</p>
+				<p>The steps above were also a suggested way to launch NicheA, rather than click the icon via <b>Start</b> menu. You can edit nichea.bat to control NicheA in detail (for example: add parameters ‘-Xms512m -Xmx8096m’ after `java` in niche.bat to allocate more memory to NicheA).
+
+				<p>Please mail to <a href="mailto:huijieqiao@gmail.com">huijieqiao [at] gmail.com</a> if you have any trouble to run NicheA.
+
+				<p>The first time to launch NicheA, it will detect all the runtime environments to make sure that all the functions are available. If you see the following dialog form, please tell NicheA the path to the necessary files.</p>
+				
+				<p><div class="image_legend"><b>Figure 3</b>. A dialog form to tell user that NicheA can’t find RScript.</div></p>
+ 			   <p><img src="images/figures/installation/installation_win_fig3.png" class="figure"/></p>
+			   
+				
+				
+				<p><div class="image_legend"><b>Figure 4</b>. Fill in the path to the necessary files.</div></p>
+			   <p><img src="images/figures/installation/installation_win_fig4.png" class="figure"/></p>
+			   
+ 
+				
+			   <h3><a href="test.html">6. Test NicheA</a></h3>
+				
+				
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>

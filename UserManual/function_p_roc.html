@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Niche Analyst</title>
+		<link href="js/base.css" rel="stylesheet">
+		<link href="js/jquery-ui.css" rel="stylesheet">
+		<script src="js/external/jquery/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+	</head>
+<body>
+<header id="header_content"></header>
+<div id="container">
+	<div class="constrain clearfix" id="logo-events"></div>
+	<nav class="constrain clearfix" id="main"></nav>
+	<div class="clearfix row" id="content-wrapper">
+		<div class="content-right twelve columns">
+			<div id="content">
+				<h2>Calculate AUC value of partial-area ROC approaches</h2>
+				<hr>
+				<p>AUC has been heavily criticized when validating ENMs/SDMs.(Lobo et al 2007). A particularly sticky problem is that the values of AUC vary with the spatial extent used to select background points. Generally, the larger that extent, the higher the AUC value. Therefore, AUC values are generally biased and cannot be directly compared.</p>
+				<p>NicheA provides an improved method to calculate AUC, which was raised by  Peterson, A. T., et al. 2008.</p>
+				
+				<p><div class="image_legend"><b>Figure 1</b>. The menu to invoke this function</div></p>
+				<p><img src="images/figures/functions/p_roc/function_p_roc_fig1.png" class="figure"/></p>
+				
+				<p>After selecting the required raster files, and set up the relevant parameters in the dialog (Fig.2), NicheA can calculate the P-ROC AUC values with different E values separated by commas. The result is shown in another form (Fig.3).</p>
+				
+				<p><div class="image_legend"><b>Figure 2</b>. The dialog of this function</div></p>
+				<p><img src="images/figures/functions/p_roc/function_p_roc_fig2.png" class="figure"/></p>
+				
+				<p><div class="image_legend"><b>Figure 3</b>. The result of this function</div></p>
+				<p><img src="images/figures/functions/p_roc/function_p_roc_fig3.png" class="figure"/></p>
+				
+				<p><b>References</b></p>
+				<p>Lobo, J. M., et al. (2008). "AUC: A misleading measure of the performance of predictive distribution models." Global Ecology And Biogeography 17(2): 145-151.</p>
+				<p>Peterson, A. T., et al. (2008). "Rethinking receiver operating characteristic analysis applications in ecological niche modeling." Ecological Modelling 213(1): 63-72.</p>
+
+			</div>
+			<div role="complementary" class="widget-area" id="sidebar"></div>
+		</div>
+	</div>
+</div>
+<footer id="fooder_content" class="clearfix simple"></footer>
+
+
+<script>
+function load(id, url){
+	$(id).load(url);
+	return false;
+}
+$(document).ready(function() {
+	load("#fooder_content", "footer.html");
+	load("#header_content", "header.html");
+	load("#main", "menu.html");
+	load("#sidebar", "siderbar.html");
+	load("#logo-events", "logo.html");
+});
+</script>
+</body>
+</html>
